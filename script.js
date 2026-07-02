@@ -1,0 +1,9 @@
+/* The Infinite Crossroads — Schola Archive scripts */
+
+function toggleLibraryMode() {
+      const status = document.getElementById('libraryStatus');
+      const active = document.body.classList.toggle('library-active');
+      status.textContent = active
+        ? 'Library Mode armed. Connect page-turn, rain, quill, or clockwork audio here.'
+        : 'Silent. Add ambient audio later if desired.';
+    }
