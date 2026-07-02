@@ -1,23 +1,18 @@
-# The Infinite Crossroads — Schola Archive Website
+# The Infinite Crossroads — Schola Archive
 
-GitHub Pages edition of the Schola Archive homepage.
+GitHub Pages static homepage.
 
-## Files
+## Required repository root files
 
-- `index.html` — homepage structure
-- `style.css` — visual system and responsive layout
-- `script.js` — small interactive behavior
-- `assets/` — brass, icon, and wax seal artwork
-- `pages/` — placeholder pages for future expansion
+- index.html
+- style.css
+- script.js
+- README.md
+- Assets/
+- Pages/
 
-## GitHub Pages
+This version uses the repository folder capitalization currently present in GitHub:
 
-After uploading these files to the repository root:
-
-1. Open repository Settings.
-2. Go to Pages.
-3. Under Build and deployment, choose Deploy from a branch.
-4. Select `main` and `/root`.
-5. Save.
-
-The site should publish shortly afterward.
+- Assets/Brass/
+- Assets/Icons/
+- Assets/Seals/
