@@ -17,3 +17,9 @@ function expandMap() {
     map.classList.remove("expanded");
   }
 }
+function closeMap(event) {
+  // Only close if clicking the background, NOT the image
+  if (event.target.id === "mapOverlay") {
+    document.getElementById("mapOverlay").style.display = "none";
+  }
+}
