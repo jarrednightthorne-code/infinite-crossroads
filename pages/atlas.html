@@ -67,8 +67,8 @@
 </div>
 
 <!-- MAP OVERLAY -->
-<div id="mapOverlay" class="map-overlay" onclick="closeMap()">
-  <img src="../assets/Maps/Mani'Erin.png" class="map-expanded">
+<div id="mapOverlay" class="map-overlay" onclick="closeMap(event)">
+  <img src="../assets/maps/world-map.jpg" class="map-expanded" onclick="event.stopPropagation()">
 </div>
 
     <div class="button-row">
