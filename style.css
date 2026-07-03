@@ -20,27 +20,27 @@
       --glow-amber: rgba(216, 184, 106, 0.40);
       --glow-blue: rgba(101, 204, 234, 0.42);
 
-      --brass-header: url("assets/brass/brass_header.png");
-      --brass-footer: url("assets/brass/brass_footer.png");
-      --corner-tl: url("assets/brass/brass_corner_top_left.png");
-      --corner-tr: url("assets/brass/brass_corner_top_right.png");
-      --corner-bl: url("assets/brass/brass_corner_bottom_left.png");
-      --corner-br: url("assets/brass/brass_corner_bottom_right.png");
-      --divider-1: url("assets/brass/bespokebrass1.png");
-      --divider-2: url("assets/brass/bespokebrass2.png");
-      --divider-3: url("assets/brass/bespokebrass3.png");
-      --divider-4: url("assets/brass/bespokebrass4.png");
-      --divider-5: url("assets/brass/bespokebrass5.png");
-      --divider-6: url("assets/brass/bespokebrass6.png");
-      --divider-7: url("assets/brass/bespokebrass7.png");
-      --icon-command: url("assets/icons/command.png");
-      --icon-discover: url("assets/icons/discover.png");
-      --icon-observe: url("assets/icons/observe.png");
-      --icon-understand: url("assets/icons/understand.png");
-      --seal-manuscript: url("assets/seals/manuscript.png");
-      --seal-restricted: url("assets/seals/restricted.png");
-      --seal-verified: url("assets/seals/verified.png");
-      --seal-unverified: url("assets/seals/unverified.png");
+      --brass-header: url("assets/Brass/brass_header.png");
+      --brass-footer: url("assets/Brass/brass_footer.png");
+      --corner-tl: url("assets/Brass/brass_corner_top_left.png");
+      --corner-tr: url("assets/Brass/brass_corner_top_right.png");
+      --corner-bl: url("assets/Brass/brass_corner_bottom_left.png");
+      --corner-br: url("assets/Brass/brass_corner_bottom_right.png");
+      --divider-1: url("assets/Brass/bespokebrass1.png");
+      --divider-2: url("assets/Brass/bespokebrass2.png");
+      --divider-3: url("assets/Brass/bespokebrass3.png");
+      --divider-4: url("assets/Brass/bespokebrass4.png");
+      --divider-5: url("assets/Brass/bespokebrass5.png");
+      --divider-6: url("assets/Brass/bespokebrass6.png");
+      --divider-7: url("assets/Brass/bespokebrass7.png");
+      --icon-command: url("assets/Icons/command.png");
+      --icon-discover: url("assets/Icons/discover.png");
+      --icon-observe: url("assets/Icons/observe.png");
+      --icon-understand: url("assets/Icons/understand.png");
+      --seal-manuscript: url("assets/Seals/manuscript.png");
+      --seal-restricted: url("assets/Seals/restricted.png");
+      --seal-verified: url("assets/Seals/verified.png");
+      --seal-unverified: url("assets/Seals/unverified.png");
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
