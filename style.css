@@ -395,3 +395,30 @@
   max-width: 500px;
   margin: 20px auto;
 }
+/* ALIGNMENT FIXES */
+
+.panel,
+.parchment-card,
+.entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical */
+  align-items: center;     /* horizontal */
+  text-align: center;
+}
+
+/* Ensure text blocks don’t stretch awkwardly */
+.panel p,
+.parchment-card p,
+.entry p {
+  max-width: 600px;
+}
+
+/* Button alignment */
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
