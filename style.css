@@ -386,3 +386,12 @@
   border: 2px solid rgba(216,184,106,.6);
   box-shadow: 0 0 40px rgba(0,0,0,.9);
 }
+.locked-panel {
+  text-align: center;
+}
+
+.locked-panel .feature-list {
+  text-align: left;
+  max-width: 500px;
+  margin: 20px auto;
+}
