@@ -1,18 +1,23 @@
-/* === PAGE BASE STYLE === */
+/* === GLOBAL BACKGROUND FIX === */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* fixes white space */
+}
+
+/* === PAGE BACKGROUND IMAGE === */
 
 body {
-    margin: 0;
-
-    background: url("/assets/Cards/rune_index_background.png") top center no-repeat;
+    background: #000 url("/assets/Cards/rune_index_background.png") top center no-repeat;
     background-size: 100% auto;
 
     font-family: 'Georgia', serif;
     color: #e6d3a3;
-
-    min-height: 200vh; /* 🔥 FORCE SCROLL SPACE */
 }
 
-/* REMOVE flex — this was breaking scrolling */
+/* === OPEN BUTTON (TEMP DEBUG) === */
+
 #openCard {
     position: fixed;
     top: 20px;
@@ -47,26 +52,26 @@ body {
 #cardPanel {
     position: fixed;
     top: 0;
-    right: -900px;
+    right: -900px; /* hidden by default */
     width: 900px;
-    height: 100vh; /* FIXED */
+    height: 100vh;
     transition: 0.4s ease;
     z-index: 1000;
-    overflow-y: auto; /* allows content to scroll if needed */
+    overflow-y: auto;
 }
 
 #cardPanel.active {
-    right: 0;
+    right: 0; /* slides in */
 }
 
-/* === MAIN CARD === */
+/* === CARD === */
 
 .rune-card {
     width: 100%;
-    min-height: 1200px; /* prevents cropping */
+    min-height: 1200px;
 
     background: url("/assets/Cards/card_background.png") top center no-repeat;
-    background-size: 100% auto; /* CRITICAL FIX */
+    background-size: 100% auto;
 
     padding: 80px 60px 60px 60px;
 
@@ -102,8 +107,7 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
-/* === RUNE IMAGE === */
-
+/* Rune Image */
 .rune-image img {
     position: absolute;
 
@@ -118,7 +122,7 @@ body {
     filter: drop-shadow(0 0 10px rgba(120, 200, 255, 0.6));
 }
 
-/* === TEXT COLUMN === */
+/* === TEXT === */
 
 .rune-content {
     flex: 1;
@@ -127,8 +131,6 @@ body {
     gap: 16px;
     margin-top: 40px;
 }
-
-/* Typography */
 
 .rune-title {
     font-size: 32px;
