@@ -1,11 +1,22 @@
-/* ===== GLOBAL RESET ===== */
+/* ===== RESET ===== */
 html, body {
     margin: 0;
     padding: 0;
-    background: #000 !important;
-    background-image: none !important;
+    background: #000;
 }
-/* ===== BUTTON ===== */
+
+/* ===== BACKGROUND IMAGE ===== */
+.page-container {
+    position: relative;
+}
+
+.page-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== FLOAT BUTTON ===== */
 #openCard {
     position: fixed;
     top: 20px;
@@ -17,6 +28,21 @@ html, body {
     border: 1px solid #8a6b3f;
     padding: 10px 16px;
     cursor: pointer;
+}
+
+/* ===== DRAWER BUTTON SYSTEM ===== */
+.drawer-btn {
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 500;
+}
+
+/* DEBUG MODE (REMOVE LATER) */
+.drawer-btn.debug {
+    background: rgba(255, 0, 0, 0.25);
+    border: 2px solid white;
 }
 
 /* ===== OVERLAY ===== */
@@ -82,6 +108,7 @@ html, body {
 .rune-content {
     flex: 1;
     margin-top: 40px;
+    color: #2b1a0f;
 }
 
 .rune-title {
