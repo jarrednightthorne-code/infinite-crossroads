@@ -4,146 +4,20 @@
 <meta charset="UTF-8">
 <title>Rune Index</title>
 
-<style>
+<link rel="stylesheet" href="/css/runestyle.css">
 
-/* ===== RESET ===== */
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    font-family: Georgia, serif;
-}
-
-/* ===== BACKGROUND IMAGE (REAL FIX) ===== */
-.page-bg {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ===== CONTENT WRAPPER ===== */
-.page-container {
-    position: relative;
-}
-
-/* ===== BUTTON ===== */
-#openCard {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 2000;
-
-    background: #2a1a0f;
-    color: #e6d3a3;
-    border: 1px solid #8a6b3f;
-    padding: 10px 16px;
-    cursor: pointer;
-}
-
-/* ===== OVERLAY ===== */
-#overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-}
-
-#overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-/* ===== PANEL ===== */
-#cardPanel {
-    position: fixed;
-    top: 0;
-    right: -900px;
-    width: 900px;
-    height: 100vh;
-    transition: 0.4s ease;
-    z-index: 1000;
-}
-
-#cardPanel.active {
-    right: 0;
-}
-
-/* ===== CARD ===== */
-.rune-card {
-    width: 100%;
-    height: 100%;
-
-    background: url("/assets/Cards/card_background.png") no-repeat top center;
-    background-size: 100% auto;
-
-    padding: 80px 60px;
-    display: flex;
-    gap: 40px;
-    position: relative;
-}
-
-/* ===== IMAGE ===== */
-.rune-image {
-    position: relative;
-    width: 220px;
-    height: 260px;
-}
-
-.rune-image img {
-    position: absolute;
-    top: 42px;
-    left: 38px;
-    width: 140px;
-    transform: rotate(-4deg);
-}
-
-/* ===== TEXT ===== */
-.rune-content {
-    flex: 1;
-    margin-top: 40px;
-    color: #2b1a0f;
-}
-
-.rune-title {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.rune-subtitle {
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.rune-body {
-    font-size: 18px;
-}
-
-/* ===== CLOSE ===== */
-#closeCard {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-
-    background: #3a2415;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-}
-
-</style>
 </head>
 
 <body>
 
 <div class="page-container">
 
-    <!-- THIS replaces background-image -->
+    <!-- BACKGROUND IMAGE -->
     <img src="/assets/Cards/rune_index_background.png" class="page-bg">
+
+    <!-- DRAWER BUTTONS (TOP ROW EXAMPLE) -->
+    <div class="drawer-btn debug" style="top: 420px; left: 380px;" onclick="openCard()"></div>
+    <div class="drawer-btn debug" style="top: 420px; left: 860px;" onclick="openCard()"></div>
 
 </div>
 
@@ -155,7 +29,7 @@ html, body {
     <div class="rune-card">
 
         <div class="rune-image">
-            <img src="../assets/Runes/Aillie.png">
+            <img src="/assets/Runes/Aillie.png">
         </div>
 
         <div class="rune-content">
@@ -173,25 +47,18 @@ html, body {
 
 <script>
 
-const openBtn = document.getElementById("openCard");
-const closeBtn = document.getElementById("closeCard");
-const panel = document.getElementById("cardPanel");
-const overlay = document.getElementById("overlay");
+function openCard() {
+    document.getElementById("cardPanel").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
 
-openBtn.addEventListener("click", () => {
-    panel.classList.add("active");
-    overlay.classList.add("active");
-});
+function closeCard() {
+    document.getElementById("cardPanel").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
 
-closeBtn.addEventListener("click", () => {
-    panel.classList.remove("active");
-    overlay.classList.remove("active");
-});
-
-overlay.addEventListener("click", () => {
-    panel.classList.remove("active");
-    overlay.classList.remove("active");
-});
+document.getElementById("closeCard").onclick = closeCard;
+document.getElementById("overlay").onclick = closeCard;
 
 </script>
 
