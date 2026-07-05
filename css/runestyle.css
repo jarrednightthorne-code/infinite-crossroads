@@ -10,8 +10,13 @@ html, body {
 
 body {
     background: #000 url("/assets/Cards/rune_index_background.png") top center no-repeat;
-    background-size: 100% auto;
 
+    /* THIS is the fix */
+    background-size: contain;
+
+    /* THIS allows scrolling */
+    min-height: 100vh;
+    
     font-family: 'Georgia', serif;
     color: #e6d3a3;
 }
