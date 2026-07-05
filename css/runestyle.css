@@ -8,6 +8,9 @@ html, body {
 /* ===== BACKGROUND IMAGE ===== */
 .page-container {
     position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .page-bg {
@@ -33,16 +36,23 @@ html, body {
 /* ===== DRAWER BUTTON SYSTEM ===== */
 .drawer-btn {
     position: absolute;
-    width: 260px;
-    height: 50px;
+    width: 13.54%;
+    height: 1.76%;
     cursor: pointer;
     z-index: 500;
+}
+
+/* Wider bottom navigation button */
+.archive-btn {
+    width: 15.2%;
+    height: 1.76%;
 }
 
 /* DEBUG MODE (REMOVE LATER) */
 .drawer-btn.debug {
     background: rgba(255, 0, 0, 0.25);
     border: 2px solid white;
+    box-sizing: border-box;
 }
 
 /* ===== OVERLAY ===== */
