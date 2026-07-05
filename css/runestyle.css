@@ -2,25 +2,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: #000;
+    background: #000 !important;
+    background-image: none !important;
 }
-
-/* ===== PAGE BACKGROUND ===== */
-body {
-    background-image: url("/assets/Cards/rune_index_background.png");
-    background-repeat: no-repeat;
-    background-position: top center;
-
-    /* THIS is the real fix */
-    background-size: 100% auto;
-
-    /* THIS allows full page scroll */
-    min-height: 200vh;
-
-    font-family: Georgia, serif;
-    color: #e6d3a3;
-}
-
 /* ===== BUTTON ===== */
 #openCard {
     position: fixed;
