@@ -14,14 +14,16 @@ html, body {
     font-family: Georgia, serif;
 }
 
-/* ===== BACKGROUND FIX (THIS IS THE IMPORTANT PART) ===== */
-body {
-    background-image: url("/assets/Cards/rune_index_background.png");
-    background-repeat: repeat-y;   /* <-- THIS is the fix */
-    background-position: top center;
-    background-size: 100% auto;    /* keep width scaling */
+/* ===== BACKGROUND IMAGE (REAL FIX) ===== */
+.page-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-    color: #e6d3a3;
+/* ===== CONTENT WRAPPER ===== */
+.page-container {
+    position: relative;
 }
 
 /* ===== BUTTON ===== */
@@ -138,6 +140,13 @@ body {
 
 <body>
 
+<div class="page-container">
+
+    <!-- THIS replaces background-image -->
+    <img src="/assets/Cards/rune_index_background.png" class="page-bg">
+
+</div>
+
 <button id="openCard">Open Bás Card</button>
 
 <div id="overlay"></div>
@@ -163,6 +172,7 @@ body {
 </div>
 
 <script>
+
 const openBtn = document.getElementById("openCard");
 const closeBtn = document.getElementById("closeCard");
 const panel = document.getElementById("cardPanel");
@@ -182,6 +192,7 @@ overlay.addEventListener("click", () => {
     panel.classList.remove("active");
     overlay.classList.remove("active");
 });
+
 </script>
 
 </body>
