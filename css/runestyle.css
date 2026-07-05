@@ -1,0 +1,78 @@
+body {
+margin: 0;
+font-family: serif;
+}
+
+#overlay {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.6);
+opacity: 0;
+pointer-events: none;
+transition: 0.3s;
+}
+
+#overlay.active {
+opacity: 1;
+pointer-events: all;
+}
+
+#cardPanel {
+position: fixed;
+top: 0;
+right: -100%;
+width: 800px;
+height: 100%;
+transition: 0.4s;
+}
+
+#cardPanel.active {
+right: 0;
+}
+
+.rune-card {
+width: 100%;
+height: 100%;
+background: url("assets/Cards/card_background_full.png") no-repeat center;
+background-size: cover;
+padding: 40px;
+display: flex;
+gap: 30px;
+position: relative;
+}
+
+.rune-image {
+width: 200px;
+height: 260px;
+background: url("assets/Cards/card_background.png") no-repeat center;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.rune-image img {
+width: 80%;
+}
+
+.rune-content {
+flex: 1;
+}
+
+.rune-title {
+font-size: 32px;
+}
+
+.rune-subtitle {
+font-style: italic;
+}
+
+.rune-body {
+margin-top: 10px;
+}
+
+#closeCard {
+position: absolute;
+top: 10px;
+right: 10px;
+}
