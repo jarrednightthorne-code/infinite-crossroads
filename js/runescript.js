@@ -1,19 +1,29 @@
-console.log("JS IS RUNNING");
+document.addEventListener("DOMContentLoaded", function () {
 
-const open = document.getElementById("openCard");
-const close = document.getElementById("closeCard");
-const panel = document.getElementById("cardPanel");
-const overlay = document.getElementById("overlay");
+    const openBtn = document.getElementById("openCard");
+    const closeBtn = document.getElementById("closeCard");
+    const panel = document.getElementById("cardPanel");
+    const overlay = document.getElementById("overlay");
 
-open.onclick = () => {
-panel.classList.add("active");
-overlay.classList.add("active");
-};
+    if (!openBtn || !panel || !overlay) {
+        console.log("JS ERROR: Elements not found");
+        return;
+    }
 
-close.onclick = shut;
-overlay.onclick = shut;
+    openBtn.addEventListener("click", function () {
+        panel.classList.add("active");
+        overlay.classList.add("active");
+    });
 
-function shut(){
-panel.classList.remove("active");
-overlay.classList.remove("active");
-}
+    function closePanel() {
+        panel.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closePanel);
+    }
+
+    overlay.addEventListener("click", closePanel);
+
+});
