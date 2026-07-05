@@ -1,16 +1,133 @@
-<!-- TEST UPDATE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Rune Index</title>
-<link rel="stylesheet" href="/css/runestyle.css">
+
+<style>
+
+/* ===== RESET ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: Georgia, serif;
+}
+
+/* ===== PAGE BACKGROUND ===== */
+body {
+    background-image: url("/assets/Cards/rune_index_background.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+
+    /* THIS FIXES SCROLL */
+    min-height: 200vh;
+}
+
+/* ===== BUTTON ===== */
+#openCard {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+
+    background: #2a1a0f;
+    color: #e6d3a3;
+    border: 1px solid #8a6b3f;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+/* ===== OVERLAY ===== */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ===== PANEL ===== */
+#cardPanel {
+    position: fixed;
+    top: 0;
+    right: -900px;
+    width: 900px;
+    height: 100%;
+    transition: 0.4s ease;
+    z-index: 1000;
+}
+
+#cardPanel.active {
+    right: 0;
+}
+
+/* ===== CARD ===== */
+.rune-card {
+    width: 100%;
+    height: 100%;
+
+    background: url("/assets/Cards/card_background.png") no-repeat center;
+    background-size: cover;
+
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+}
+
+/* ===== IMAGE ===== */
+.rune-image {
+    width: 220px;
+}
+
+.rune-image img {
+    width: 100%;
+}
+
+/* ===== TEXT ===== */
+.rune-content {
+    flex: 1;
+    color: #2b1a0f;
+}
+
+.rune-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.rune-subtitle {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.rune-body {
+    font-size: 18px;
+}
+
+/* ===== CLOSE ===== */
+#closeCard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    background: #3a2415;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+</style>
 </head>
-<body>
-
-<button id="openCard">Open Bás Card</button>
-
-<div id="overlay"></div>
 
 <body>
 
@@ -22,31 +139,47 @@
     <div class="rune-card">
 
         <div class="rune-image">
-            <img src="../assets/Runes/Aillie.png" alt="Rune">
+            <img src="../assets/Runes/Aillie.png">
         </div>
 
         <div class="rune-content">
             <div class="rune-title">Bás</div>
             <div class="rune-subtitle">Death — The Necromancer’s Rune</div>
-
             <div class="rune-body">
                 Bás allows a Manipulator to harness the power of death and unlife.
             </div>
         </div>
 
-        <button id="closeCard">✕</button>
+        <button id="closeCard">X</button>
 
     </div>
 </div>
 
-<script src="/js/runescript.js"></script>
+<script>
 
-</body>
+/* ===== JS (WORKING) ===== */
 
-        <button id="closeCard">✕</button>
+const openBtn = document.getElementById("openCard");
+const closeBtn = document.getElementById("closeCard");
+const panel = document.getElementById("cardPanel");
+const overlay = document.getElementById("overlay");
 
-    </div>
-</div>
-<script src="/js/runescript.js"></script>
+openBtn.onclick = () => {
+    panel.classList.add("active");
+    overlay.classList.add("active");
+};
+
+closeBtn.onclick = () => {
+    panel.classList.remove("active");
+    overlay.classList.remove("active");
+};
+
+overlay.onclick = () => {
+    panel.classList.remove("active");
+    overlay.classList.remove("active");
+};
+
+</script>
+
 </body>
 </html>
