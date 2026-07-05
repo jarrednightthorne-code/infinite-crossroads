@@ -1,3 +1,5 @@
+console.log("JS IS RUNNING");
+
 const open = document.getElementById("openCard");
 const close = document.getElementById("closeCard");
 const panel = document.getElementById("cardPanel");
