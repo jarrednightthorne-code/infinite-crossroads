@@ -6,7 +6,7 @@
 
 <style>
 
-/* ===== GLOBAL RESET ===== */
+/* ===== RESET ===== */
 html, body {
     margin: 0;
     padding: 0;
@@ -14,15 +14,12 @@ html, body {
     font-family: Georgia, serif;
 }
 
-/* ===== PAGE BACKGROUND ===== */
+/* ===== BACKGROUND FIX (THIS IS THE IMPORTANT PART) ===== */
 body {
     background-image: url("/assets/Cards/rune_index_background.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;   /* <-- THIS is the fix */
     background-position: top center;
-    background-size: 100% auto;
-
-    /* forces full scrollable page */
-    min-height: 200vh;
+    background-size: 100% auto;    /* keep width scaling */
 
     color: #e6d3a3;
 }
@@ -166,9 +163,6 @@ body {
 </div>
 
 <script>
-
-/* ===== JS (CLEAN + GUARANTEED WORKING) ===== */
-
 const openBtn = document.getElementById("openCard");
 const closeBtn = document.getElementById("closeCard");
 const panel = document.getElementById("cardPanel");
@@ -188,7 +182,6 @@ overlay.addEventListener("click", () => {
     panel.classList.remove("active");
     overlay.classList.remove("active");
 });
-
 </script>
 
 </body>
