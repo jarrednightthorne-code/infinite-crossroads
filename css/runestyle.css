@@ -18,6 +18,14 @@ body {
     align-items: flex-start;
 }
 
+#openCard {
+    background: #2a1a0f;
+    color: #e6d3a3;
+    border: 1px solid #8a6b3f;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
 /* === RUNE CARD FULL STYLE (CLEAN DROP-IN) === */
 
 body {
