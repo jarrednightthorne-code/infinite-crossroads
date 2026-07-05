@@ -82,9 +82,17 @@ body {
 }
 
 /* Rune Frame */
-.rune-image {
-    width: 220px;
-    height: 260px;
+.rune-image img {
+    max-width: 140px;
+    max-height: 180px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+    margin: auto;
 
     background: url("/assets/Cards/card_background.png") no-repeat center;
     background-size: cover;
