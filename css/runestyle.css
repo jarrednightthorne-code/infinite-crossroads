@@ -4,10 +4,12 @@ body {
     margin: 0;
 
     background: url("/assets/Cards/rune_index_background.png") top center no-repeat;
-    background-size: 100% auto; /* IMPORTANT: no cropping */
+    background-size: 100% auto;
 
     font-family: 'Georgia', serif;
     color: #e6d3a3;
+
+    min-height: 200vh; /* 🔥 FORCE SCROLL SPACE */
 }
 
 /* REMOVE flex — this was breaking scrolling */
@@ -43,7 +45,8 @@ body {
 /* === SLIDING PANEL === */
 
 #cardPanel {
-    position: fixed;
+    right: 0 !important;
+}
     top: 0;
     right: -900px;
     width: 900px;
