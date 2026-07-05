@@ -1,3 +1,23 @@
+/* === PAGE BASE STYLE === */
+
+body {
+    margin: 0;
+    padding: 40px;
+
+    background: url("/assets/Cards/index_background.png") no-repeat center;
+    background-size: cover;
+
+    font-family: 'Georgia', serif;
+    color: #e6d3a3;
+}
+
+/* Center content */
+body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 /* === RUNE CARD FULL STYLE (CLEAN DROP-IN) === */
 
 body {
