@@ -112,8 +112,8 @@ html, body {
 
 .rune-image img {
     position: absolute;
-    top: 12px;
-    left: 22px;
+    top: 22px;
+    left: 17px;
     width: 140px;
     transform: rotate(-4deg);
 }
