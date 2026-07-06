@@ -19,8 +19,8 @@
     <div class="button-layer" id="buttonLayer">
 
         <!-- DISCIPLINE RUNES -->
-        <div class="drawer-btn debug" style="top: 739px; left: 643px;" onclick="openCard()"></div>
-        <div class="drawer-btn debug" style="top: 739px; left: 1478px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 739px; left: 643px;" onclick="openCard('aille')"></div>
+        <div class="drawer-btn debug" style="top: 739px; left: 1478px;" onclick="openCard('bas')"></div>
         <div class="drawer-btn debug" style="top: 841px; left: 643px;" onclick="openCard()"></div>
         <div class="drawer-btn debug" style="top: 841px; left: 1478px;" onclick="openCard()"></div>
         <div class="drawer-btn debug" style="top: 945px; left: 643px;" onclick="openCard()"></div>
@@ -61,10 +61,10 @@
     <div class="rune-card rune-card-tall">
 
         <div class="rune-image">
-            <img src="/assets/Runes/Bas.png">
+            <img id="runeCardImage" src="/assets/Runes/Bas.png">
         </div>
 
-        <div class="rune-content rune-card-content">
+        <div class="rune-content rune-card-content" id="runeCardContent">
             <div class="rune-title">Bás</div>
             <div class="rune-subtitle">Death — The Necromancer’s Rune</div>
             <div class="rune-quote">“Death is not the opposite of life, but an innate part of it.”</div>
@@ -118,7 +118,115 @@
                 <p>“The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.”</p>
             </section>
         </div>
+        <template id="basCardTemplate">
+            <div class="rune-title">Bás</div>
+            <div class="rune-subtitle">Death — The Necromancer’s Rune</div>
+            <div class="rune-quote">“Death is not the opposite of life, but an innate part of it.”</div>
 
+            <section class="card-section">
+                <h3>Description</h3>
+                <p>Bás allows a Manipulator to harness death and unlife. A Bás Sigil may target one person, object, or corpse per Mana spent.</p>
+                <p>Puppets require active Concentration, even when another source sustains the Sigil. Animations persist until destroyed, so long as they can find Mana to drain.</p>
+            </section>
+
+            <section class="card-section">
+                <h3>Mana Effects</h3>
+                <div class="effect-grid">
+                    <p><strong>Drain — 1 Mana.</strong> Sap vitality and reduce physical ability. Pair with a Discipline Rune to define what is drained.</p>
+                    <p><strong>Bolster — 2 Mana.</strong> Increase vitality and enhance physical ability. Pair with a Discipline Rune to define what is bolstered.</p>
+                    <p><strong>Puppet — 3 Mana.</strong> Wrest control of an existing corpse as a marionette while Concentrating.</p>
+                    <p><strong>Siphon — 4 Mana.</strong> Steal vitality from another creature and add it to your own. Pair with a Discipline Rune to define what is taken.</p>
+                    <p><strong>Animation — 5 Mana.</strong> Instill a singular purpose into remains. Animated corpses act without direct control.</p>
+                </div>
+            </section>
+<section class="card-section">
+                <h3>Material Components</h3>
+                <div class="component-grid">
+                    <p><strong>Driftwood.</strong> Funerary wood tied to endings. Used in hexes, drums, and rattles to hinder enemies or call/control undead.</p>
+                    <p><strong>Jet.</strong> Black organic gemstone from Aos’si burial grounds. Associated with nightmares, dread, and necromancy; may substitute for Bás.</p>
+                    <p><strong>Fel-Flesh.</strong> Undead husk hide treated with Yarrow oil and elemental earth. Grants Necrotic Resistance; cursed armor causes Dark Hunger.</p>
+                    <p><strong>Darksteel.</strong> Steel tempered in Haunted wood, immune to rust and fire but rotting quickly in bright light. Weapons deal Frost or Necrotic; armor resists.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Spatial Components</h3>
+                <div class="component-grid three">
+                    <p><strong>Crypts.</strong> The classic and practical approach. Crypts always sit closely in the Violet Tide and act as dark wells of Odium.</p>
+                    <p><strong>Cemeteries.</strong> Best when unmarked, abandoned, or unsanctified; sanctified ground resists unwilling use.</p>
+                    <p><strong>Killing Fields.</strong> Mass graves and battle memorials. Powerful sites. Extreme caution advised.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Temporal Components</h3>
+                <div class="component-grid three">
+                    <p><strong>Plouton.</strong> The greater malefic: time, aging, decay, and finality. Highest on the 25th of Eldermoon.</p>
+                    <p><strong>Feast of the Moon.</strong> The 25th of Ivy Moon, when Materia and the Dead Realm draw closest.</p>
+                    <p><strong>The Dragon.</strong> The 12th year of the Templar cycle, regarded with caution due to death and Drakōn fear.</p>
+                </div>
+            </section>
+
+            <section class="card-section notes-section">
+                <h3>Notes</h3>
+                <p>“The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.”</p>
+            </section>
+        </template>
+        <template id="ailleCardTemplate">
+            <div class="rune-title">Áille</div>
+            <div class="rune-subtitle">Beauty — The Illusionist’s Rune</div>
+            <div class="rune-quote">“Reality is merely an illusion, albeit a very persistent one.”</div>
+
+            <section class="card-section">
+                <h3>Description</h3>
+                <p>Áille deceives the senses and minds of others, causing them to see and hear what is not there. An Áille Sigil may target one creature, object, or corpse per Mana spent.</p>
+                <p>Illusions go unnoticed unless studied carefully or physically tested. Once given proof that an illusion is false, a character no longer needs to Resist it.</p>
+            </section>
+
+            <section class="card-section">
+                <h3>Mana Effects</h3>
+                <div class="effect-grid">
+                    <p><strong>Figment — 1 Mana.</strong> Create an unreal glamour that cannot harm, support weight, nourish, or shelter. Best used to confuse and delay.</p>
+                    <p><strong>Glamour — 2 Mana.</strong> Alter how an object looks, feels, tastes, smells, or sounds; it may even be rendered temporarily invisible.</p>
+                    <p><strong>Pattern — 3 Mana.</strong> Weave figments and glamours into a pattern that affects observers, distracting or sickening them.</p>
+                    <p><strong>Phantasm — 4 Mana.</strong> Create a complex mental illusion perceived only by the caster and target, leaving a personalized impression entirely in the target’s mind.</p>
+                    <p><strong>Animation — 5 Mana.</strong> Instill a singular purpose into remains. Animated corpses act without direct control.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Material Components</h3>
+                <div class="component-grid">
+                    <p><strong>Birchwood.</strong> Tied to creativity, renewal, and Áille. Shavings induce visions; wands weave illusions, while combs may enhance beauty and youth.</p>
+                    <p><strong>Pearl.</strong> A costly symbol of beauty and wonder, long used by heartbreakers and charlatans. An effective substitute for Áille.</p>
+                    <p><strong>Drude-skin.</strong> Leather steamed with fairy dust, then bathed in moonlight within a Glower Patch. Resists Mind Wounds; cursed pieces cause restlessness and insomnia.</p>
+                    <p><strong>Gold.</strong> Soft and unsuitable for armor, but exceptionally valuable as a conductor capable of holding multiple, even conflicting, enchantments.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Spatial Components</h3>
+                <div class="component-grid three">
+                    <p><strong>The Forsaken Waste.</strong> A boiling, acid-flooded wasteland whose extreme heat drives sentients toward hallucination and madness.</p>
+                    <p><strong>Harvest Lake.</strong> A rainbow-lit lake above an underwater crevasse; its impossibly blue center is too hot to enter.</p>
+                    <p><strong>A Grattis Blind.</strong> Mirror-polished old-world shelters that reflect wilderness and weather so perfectly they disappear from certain approaches.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Temporal Components</h3>
+                <div class="component-grid three">
+                    <p><strong>The Serpent.</strong> A constellation whose stars only appear connected. Illusions crafted during its year are exceptionally potent.</p>
+                    <p><strong>Ash Moon.</strong> The 3rd month, when Materia and the Spring Wyld draw closest and prankish Faerie encounters become common.</p>
+                    <p><strong>Glower Patch.</strong> Rings of purple-and-white spotted mushrooms associated with altered perception and missing or confused memories.</p>
+                </div>
+            </section>
+
+            <section class="card-section notes-section">
+                <h3>Notes</h3>
+                <p>“We live in a fantasy world, a world of illusion. The great task in life is to find reality.”</p>
+            </section>
+</template>
         <button id="closeCard">X</button>
 
     </div>
@@ -140,7 +248,17 @@ function syncButtonLayer() {
 window.addEventListener("load", syncButtonLayer);
 window.addEventListener("resize", syncButtonLayer);
 
-function openCard() {
+function openCard(runeKey) {
+    const template = document.getElementById(runeKey + "CardTemplate");
+    if (!template) return;
+
+    const runeImages = {
+        aille: "/assets/Runes/Aillie.png",
+        bas: "/assets/Runes/Bas.png"
+    };
+
+    document.getElementById("runeCardImage").src = runeImages[runeKey];
+    document.getElementById("runeCardContent").innerHTML = template.innerHTML;
     document.getElementById("cardPanel").classList.add("active");
     document.getElementById("overlay").classList.add("active");
 }
