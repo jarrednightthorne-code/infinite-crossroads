@@ -54,23 +54,75 @@
     </div>
 </div>
 
-<button id="openCard">Open Bás Card</button>
 
 <div id="overlay"></div>
 
 <div id="cardPanel">
-    <div class="rune-card">
+    <div class="rune-card rune-card-tall">
 
         <div class="rune-image">
             <img src="/assets/Runes/Aillie.png">
         </div>
 
-        <div class="rune-content">
+        <div class="rune-content rune-card-content">
             <div class="rune-title">Bás</div>
             <div class="rune-subtitle">Death — The Necromancer’s Rune</div>
-            <div class="rune-body">
-                Bás allows a Manipulator to harness the power of death and unlife.
-            </div>
+            <div class="rune-quote">“Death is not the opposite of life, but an innate part of it.”</div>
+
+            <section class="card-section">
+                <h3>Description</h3>
+                <p>Bás allows a Manipulator to harness death and unlife. A Bás Sigil may target one person, object, or corpse per Mana spent.</p>
+                <p>Puppets require active Concentration, even when another source sustains the Sigil. Animations persist until destroyed, so long as they can find Mana to drain.</p>
+            </section>
+
+            <section class="card-section">
+                <h3>Mana Effects</h3>
+                <div class="effect-grid">
+                    <p><strong>Drain — 1 Mana.</strong> Sap vitality and reduce physical ability. Pair with a Discipline Rune to define what is drained.</p>
+                    <p><strong>Bolster — 2 Mana.</strong> Increase vitality and enhance physical ability. Pair with a Discipline Rune to define what is bolstered.</p>
+                    <p><strong>Puppet — 3 Mana.</strong> Wrest control of an existing corpse as a marionette while Concentrating.</p>
+                    <p><strong>Siphon — 4 Mana.</strong> Steal vitality from another creature and add it to your own. Pair with a Discipline Rune to define what is taken.</p>
+                    <p><strong>Animation — 5 Mana.</strong> Instill a singular purpose into remains. Animated corpses act without direct control.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Associated Discipline</h3>
+                <p>Necromancy.</p>
+            </section>
+
+            <section class="card-section">
+                <h3>Material Components</h3>
+                <div class="component-grid">
+                    <p><strong>Driftwood.</strong> Funerary wood tied to endings. Used in hexes, drums, and rattles to hinder enemies or call/control undead.</p>
+                    <p><strong>Jet.</strong> Black organic gemstone from Aos’si burial grounds. Associated with nightmares, dread, and necromancy; may substitute for Bás.</p>
+                    <p><strong>Fel-Flesh.</strong> Undead husk hide treated with Yarrow oil and elemental earth. Grants Necrotic Resistance; cursed armor causes Dark Hunger.</p>
+                    <p><strong>Darksteel.</strong> Haunted black wood, immune to rust and fire but rotting quickly in bright light. Weapons deal Frost or Necrotic damage; armor resists either.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Spatial Components</h3>
+                <div class="component-grid three">
+                    <p><strong>Crypts.</strong> Wells of deathly energy near the Violet Tide.</p>
+                    <p><strong>Cemeteries.</strong> Best when unmarked, abandoned, or unsanctified; sanctified ground resists unwilling use.</p>
+                    <p><strong>Killing Fields.</strong> Mass graves and battle memorials. Powerful sites. Extreme caution advised.</p>
+                </div>
+            </section>
+
+            <section class="card-section">
+                <h3>Temporal Components</h3>
+                <div class="component-grid three">
+                    <p><strong>Plouton.</strong> The greater malefic: time, aging, decay, and finality. Highest on the 25th of Eldermoon.</p>
+                    <p><strong>Feast of the Moon.</strong> The 25th of Ivy Moon, when Materia and the Dead Realm draw closest.</p>
+                    <p><strong>The Dragon.</strong> The 12th year of the Templar cycle, regarded with caution due to death and Drakōn fear.</p>
+                </div>
+            </section>
+
+            <section class="card-section notes-section">
+                <h3>Notes</h3>
+                <p>“The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.”</p>
+            </section>
         </div>
 
         <button id="closeCard">X</button>
@@ -106,7 +158,8 @@ function closeCard() {
 
 document.getElementById("closeCard").onclick = closeCard;
 document.getElementById("overlay").onclick = closeCard;
-document.getElementById("openCard").onclick = openCard;
+const openButton = document.getElementById("openCard");
+if (openButton) openButton.onclick = openCard;
 </script>
 
 </body>
