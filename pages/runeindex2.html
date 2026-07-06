@@ -21,7 +21,7 @@
         <!-- DISCIPLINE RUNES -->
         <div class="drawer-btn debug" style="top: 739px; left: 643px;" onclick="openCard('aille')"></div>
         <div class="drawer-btn debug" style="top: 739px; left: 1478px;" onclick="openCard('bas')"></div>
-        <div class="drawer-btn debug" style="top: 841px; left: 643px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 841px; left: 643px;" onclick="openCard('tais')"></div>
         <div class="drawer-btn debug" style="top: 841px; left: 1478px;" onclick="openCard()"></div>
         <div class="drawer-btn debug" style="top: 945px; left: 643px;" onclick="openCard()"></div>
         <div class="drawer-btn debug" style="top: 945px; left: 1478px;" onclick="openCard()"></div>
@@ -251,7 +251,65 @@ const runeCards = {
     <h3>Notes</h3>
     <p>“We live in a fantasy world, a world of illusion. The great task in life is to find reality.”</p>
 </section>`
+    },
+
+    tais: {
+        image: "/assets/Runes/Tais.png",
+        html: `<div class="rune-title">Tais</div>
+<div class="rune-subtitle">Travel — The Conjurer’s Rune</div>
+<div class="rune-quote">“It is unwise to summon what you cannot dismiss.”</div>
+
+<section class="card-section">
+    <h3>Description</h3>
+    <p>Combined with other Runes, Tais transports creatures or objects across great distances or planes, or creates objects and effects on the spot. Conjured creatures usually obey your commands—but not always.</p>
+    <p>A conjuration cannot appear inside an occupied space. It must arrive in an open location on a surface capable of holding it.</p>
+</section>
+
+<section class="card-section">
+    <h3>Mana Effects</h3>
+    <div class="effect-grid">
+        <p><strong>Creation — 1 Mana.</strong> Small, simple creations may persist indefinitely if they need no Mana. Larger or more complex creations vanish after a duration tied to their scale.</p>
+        <p><strong>Summon — 2 Mana.</strong> Instantly bring a creature or object to a chosen place. Creatures return quickly; objects remain unless blocked by wards or dense mass.</p>
+        <p><strong>Heal — 3 Mana.</strong> Summon the body’s healing factors to mend flesh and cure sickness. Combined with other Sigils, it may even restore life.</p>
+        <p><strong>Phantasm — 4 Mana.</strong> Create a complex mental illusion perceived only by the caster and target, leaving a personalized impression inside the target’s mind.</p>
+        <p><strong>Translocation — 5 Mana.</strong> Teleport creatures or objects across great distances or planar boundaries. One-way and irreversible; anything blocking Astral travel also blocks translocation.</p>
+    </div>
+</section>
+
+<section class="card-section">
+    <h3>Material Components</h3>
+    <div class="component-grid">
+        <p><strong>Oak Leaf.</strong> Adds conjuration to concoctions. Oak is tied to protection, strength, and Tais; acorns bring good fortune, while oaken implements ease summoning.</p>
+        <p><strong>Opal.</strong> The Queen of Gems reflects emotion, stimulates creativity, strengthens Resolve, and heightens cosmic awareness. A prized substitute for Tais.</p>
+        <p><strong>Imp Hide.</strong> Leather steeped in alcohol and powdered imp horn. Items made from it can be Summoned to their owner; cursed hide leaves the wearer vulnerable to petrification.</p>
+        <p><strong>Maritime Quartz.</strong> Blue-green crystal worked like metal. Beads, jewelry, and statues help travelers adapt to unfamiliar environs, commonly granting water-breathing and swimming.</p>
+    </div>
+</section>
+
+<section class="card-section">
+    <h3>Spatial Components</h3>
+    <div class="component-grid three">
+        <p><strong>The Giant’s Ossuary.</strong> Forty thousand interlocking basalt columns containing strange enclosures where distinct biomes flourish year-round.</p>
+        <p><strong>Greenman Oak.</strong> An ancient oak coiled around its clearing, with sky-root branches and an ivy-covered canopy beneath which little else grows.</p>
+        <p><strong>The Broken Belt.</strong> Cosmic travelers visible from Prime every 75–76 years, briefly summoning deep-space phenomena into mortal view.</p>
+    </div>
+</section>
+
+<section class="card-section">
+    <h3>Temporal Components</h3>
+    <div class="component-grid three">
+        <p><strong>The All-Speak Stone.</strong> A five-script stele that became the key to lost history, summoning dead civilizations’ voices back into the world.</p>
+        <p><strong>Summer’s Dream Festival.</strong> The 7th of Oak Moon strengthens Tais until Midsummer, when heroic and legendary Faerie encounters become common.</p>
+        <p><strong>Titan Arum.</strong> The rare Corpse Flower blooms for only 24–28 hours, releasing spore-clouds that become newly hatched insects. Often powdered into scroll ink.</p>
+    </div>
+</section>
+
+<section class="card-section notes-section">
+    <h3>Notes</h3>
+    <p>“Names have power. True names... well now. Let me show you.”</p>
+</section>`
     }
+
 };
 
 function openCard(runeKey = "bas") {
