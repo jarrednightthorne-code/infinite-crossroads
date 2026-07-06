@@ -12,17 +12,23 @@ html, body {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-
-    /* Locks the clickable layer to the same shape as the artwork */
-    aspect-ratio: 1920 / 2844;
 }
 
 .page-bg {
-    position: absolute;
-    inset: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
+}
+
+/* ===== BUTTON LAYER ===== */
+.button-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 2844px;
+    transform-origin: top left;
+    z-index: 500;
 }
 
 /* ===== FLOAT BUTTON ===== */
@@ -42,16 +48,15 @@ html, body {
 /* ===== DRAWER BUTTON SYSTEM ===== */
 .drawer-btn {
     position: absolute;
-    width: 13.54%;
-    height: 1.76%;
+    width: 260px;
+    height: 50px;
     cursor: pointer;
-    z-index: 500;
 }
 
 /* Wider bottom navigation button */
 .archive-btn {
-    width: 18.6%;
-    height: 2.2%;
+    width: 357px;
+    height: 63px;
 }
 
 /* DEBUG MODE (REMOVE LATER) */
@@ -69,6 +74,7 @@ html, body {
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
+    z-index: 900;
 }
 
 #overlay.active {
