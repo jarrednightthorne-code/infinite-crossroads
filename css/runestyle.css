@@ -189,6 +189,10 @@ html, body {
     row-gap: 13px;
 }
 
+.component-grid:not(.three) {
+    row-gap: 13px;
+}
+
 .component-grid.three {
     grid-template-columns: repeat(3, 1fr);
 }
