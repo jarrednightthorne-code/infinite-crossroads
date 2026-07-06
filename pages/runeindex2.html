@@ -13,41 +13,51 @@
 <div class="page-container">
 
     <!-- BACKGROUND IMAGE -->
-    <img src="/assets/Cards/rune_index_background.png" class="page-bg">
+    <img src="/assets/Cards/rune_index_background.png" class="page-bg" id="runeIndexBg">
 
-    <!-- DRAWER BUTTONS (TOP ROW EXAMPLE) -->
-    <div class="drawer-btn debug" style="top: 25.60%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 25.60%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 29.18%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 29.18%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 32.84%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 32.84%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 36.57%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 36.57%; left: 76.56%;" onclick="openCard()"></div>
- 
-    <!-- DRAWER BUTTONS (MIDDLE ROW EXAMPLE) -->
-    <div class="drawer-btn debug" style="top: 46.94%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 46.94%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 50.39%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 50.39%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 53.94%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 53.94%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 57.38%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 57.38%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 60.94%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 60.94%; left: 76.56%;" onclick="openCard()"></div>
+    <!-- BUTTON LAYER: keeps original 1920px placement, then scales as one piece -->
+    <div class="button-layer" id="buttonLayer">
 
-     <!-- DRAWER BUTTONS (BOTTOM ROW EXAMPLE) -->
-    <div class="drawer-btn debug" style="top: 77.36%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 77.36%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 80.91%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 80.91%; left: 76.56%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 84.46%; left: 33.07%;" onclick="openCard()"></div>
-    <div class="drawer-btn debug" style="top: 84.46%; left: 76.56%;" onclick="openCard()"></div>
+        <!-- DISCIPLINE RUNES -->
+        <div class="drawer-btn debug" style="top: 728px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 728px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 830px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 830px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 934px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 934px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1040px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1040px; left: 1470px;" onclick="openCard()"></div>
 
-    <!-- RETURN TO ARCHIVE BUTTON -->
-    <div class="drawer-btn archive-btn debug" style="top: 93.18%; left: 9.11%;" onclick="openCard()"></div>
-        
+        <!-- ELEMENT RUNES -->
+        <div class="drawer-btn debug" style="top: 1335px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1335px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1433px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1433px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1534px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1534px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1632px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1632px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1733px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1733px; left: 1470px;" onclick="openCard()"></div>
+
+        <!-- FOCUS RUNES -->
+        <div class="drawer-btn debug" style="top: 2200px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 2200px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 2301px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 2301px; left: 1470px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 2402px; left: 635px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 2402px; left: 1470px;" onclick="openCard()"></div>
+
+        <!-- RETURN TO ARCHIVE BUTTON -->
+        <div class="drawer-btn archive-btn debug" style="top: 2650px; left: 175px;" onclick="openCard()"></div>
+
+    </div>
+</div>
+
+<button id="openCard">Open Bás Card</button>
+
+<div id="overlay"></div>
+
 <div id="cardPanel">
     <div class="rune-card">
 
@@ -69,6 +79,20 @@
 </div>
 
 <script>
+function syncButtonLayer() {
+    const bg = document.getElementById("runeIndexBg");
+    const layer = document.getElementById("buttonLayer");
+
+    if (!bg || !layer) return;
+
+    const designWidth = 1920;
+    const scale = bg.clientWidth / designWidth;
+
+    layer.style.transform = "scale(" + scale + ")";
+}
+
+window.addEventListener("load", syncButtonLayer);
+window.addEventListener("resize", syncButtonLayer);
 
 function openCard() {
     document.getElementById("cardPanel").classList.add("active");
@@ -82,7 +106,7 @@ function closeCard() {
 
 document.getElementById("closeCard").onclick = closeCard;
 document.getElementById("overlay").onclick = closeCard;
-
+document.getElementById("openCard").onclick = openCard;
 </script>
 
 </body>
