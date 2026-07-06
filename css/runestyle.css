@@ -75,8 +75,8 @@ html, body {
     top: 0;
     right: -900px;
     width: 900px;
-    height: calc(100vh + 40px);
-    max-height: calc(100vh + 40px);
+    height: calc(100vh + 35px);
+    max-height: calc(100vh + 35px);
     overflow-y: auto;
     overflow-x: hidden;
     transition: 0.4s ease;
@@ -90,13 +90,13 @@ html, body {
 /* ===== CARD ===== */
 .rune-card {
     width: 100%;
-    min-height: calc(100vh + 40px);
+    min-height: calc(100vh + 35px);
     box-sizing: border-box;
 
     background: url("/assets/Cards/card_background.png") no-repeat top center;
     background-size: 100% 100%;
 
-    padding: 80px 60px 120px;
+    padding: 80px 60px 115px;
     display: flex;
     gap: 40px;
     position: relative;
@@ -112,8 +112,8 @@ html, body {
 
 .rune-image img {
     position: absolute;
-    top: 42px;
-    left: 38px;
+    top: 27px;
+    left: 30px;
     width: 140px;
     transform: rotate(-4deg);
 }
@@ -140,8 +140,11 @@ html, body {
 }
 
 .rune-card-content {
-    max-width: 560px;
+    max-width: 585px;
     padding-bottom: 40px;
+    position: relative;
+    left: -20px;
+    padding-right: 5px;
 }
 
 .rune-quote {
@@ -153,8 +156,8 @@ html, body {
 
 .card-section {
     border-top: 1px solid rgba(43, 26, 15, 0.55);
-    margin-top: 9px;
-    padding-top: 6px;
+    margin-top: 14px;
+    padding-top: 11px;
 }
 
 .card-section h3 {
