@@ -220,3 +220,54 @@ html, body {
     height: 32px;
     cursor: pointer;
 }
+
+/* ===== ELEMENT RUNE CARD LAYOUT ===== */
+.element-discharge {
+    margin-top: 22px;
+    padding: 15px 18px;
+    border: 1px solid rgba(43, 26, 15, 0.65);
+    background: rgba(96, 67, 39, 0.08);
+    text-align: center;
+}
+.element-discharge-label {
+    margin-bottom: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-variant: small-caps;
+}
+.element-discharge-rule {
+    max-width: 470px;
+    margin: 0 auto;
+    font-size: 12.5px;
+    line-height: 1.35;
+}
+.element-component-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 24px;
+    border-top: 1px solid rgba(43, 26, 15, 0.55);
+    border-bottom: 1px solid rgba(43, 26, 15, 0.55);
+}
+.element-component-column {
+    min-height: 390px;
+    padding: 16px 14px 12px;
+}
+.element-component-column + .element-component-column {
+    border-left: 1px solid rgba(43, 26, 15, 0.38);
+}
+.element-component-column h3 {
+    margin: 0 0 16px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    font-variant: small-caps;
+}
+.element-component-column p {
+    margin: 0 0 20px;
+    font-size: 11.5px;
+    line-height: 1.28;
+}
+.element-notes { margin-top: 22px; }
