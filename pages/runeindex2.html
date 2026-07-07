@@ -29,7 +29,7 @@
         <div class="drawer-btn debug" style="top: 1051px; left: 1478px;" onclick="openCard('coga')"></div>
 
         <!-- ELEMENT RUNES -->
-        <div class="drawer-btn debug" style="top: 1351px; left: 643px;" onclick="openCard()"></div>
+        <div class="drawer-btn debug" style="top: 1351px; left: 643px;" onclick="openCard('elementblank')"></div>
         <div class="drawer-btn debug" style="top: 1351px; left: 1478px;" onclick="openCard()"></div>
         <div class="drawer-btn debug" style="top: 1449px; left: 643px;" onclick="openCard()"></div>
         <div class="drawer-btn debug" style="top: 1449px; left: 1478px;" onclick="openCard()"></div>
@@ -204,8 +204,8 @@ const runeCards = {
 
 <section class="card-section">
     <h3>Description</h3>
-    <p>Áille deceives the senses and minds of others, causing them to see and hear things that are not there. An Áille Sigil may target one creature, object, or corpse per Mana spent.</p>
-    <p>Illusions go unnoticed unless studied carefully or physically tested. Once faced with proof that an illusion is false, a character no longer needs to Resist it.</p>
+    <p>Áille deceives the senses and mind, creating sights and sounds that are not there. A Sigil may target one creature, object, or corpse per Mana spent.</p>
+    <p>Illusions go unnoticed until carefully studied or physically tested. Proof that an illusion is false removes the need to Resist it.</p>
 </section>
 
 <section class="card-section">
@@ -261,8 +261,8 @@ const runeCards = {
 
 <section class="card-section">
     <h3>Description</h3>
-    <p>Combined with other Runes, Tais transports creatures or objects across great distances or planes, or creates objects and effects on the spot. Conjured creatures usually obey your commands—but not always.</p>
-    <p>A conjuration cannot appear inside an occupied space. It must arrive in an open location on a surface capable of holding it.</p>
+    <p>Tais transports creatures or objects across distances or planes, or creates them on the spot. Conjured creatures usually obey—but not always.</p>
+    <p>Conjurations must arrive in open space on a surface capable of holding them.</p>
 </section>
 
 <section class="card-section">
@@ -318,8 +318,8 @@ const runeCards = {
 
 <section class="card-section">
     <h3>Description</h3>
-    <p>Crut creates natural defenses, exchanges species traits, and changes the form of creatures or inanimate objects.</p>
-    <p>A Transmuter can maintain only a limited number of Crut Sigils. If a new Sigil exceeds that limit, the oldest active Sigil ends and the new one takes its place.</p>
+    <p>Crut creates natural defenses, exchanges species traits, and changes creatures or objects.</p>
+    <p>A Transmuter can maintain only limited Crut Sigils. Exceeding that limit ends the oldest.</p>
 </section>
 
 <section class="card-section">
@@ -375,8 +375,8 @@ const runeCards = {
 
 <section class="card-section">
     <h3>Description</h3>
-    <p>Geal bewilders and manipulates the mind, influencing or controlling a victim’s behavior. All Geal Sigils are mind-affecting.</p>
-    <p>A Manipulator may maintain only a handful of Geal Sigils at once. New Sigils replace the oldest active one.</p>
+    <p>Geal manipulates the mind, influencing or controlling behavior. All Geal Sigils are mind-affecting.</p>
+    <p>A Manipulator may maintain only a handful at once. New Sigils replace the oldest.</p>
 </section>
 
 <section class="card-section">
@@ -431,8 +431,8 @@ const runeCards = {
 
 <section class="card-section">
     <h3>Description</h3>
-    <p>The Ord Rune focuses on preventative measures. It’s often called the anti-Majik Rune. With Ord sigils, you may create physical or mana barriers that negate Majik or physical abilities, harm trespassers, or even banish the subject of the Sigil to another plane of existence</p>
-    <p>If a Sigil creates barriers that keep certain types of creatures at bay, it simply keeps them out. It cannot be used to push those creatures. Caution, excess damage to a barrier that's being concentrated on may double back on the manipulator.</p>
+    <p>Ord is the anti-Majik Rune: it creates barriers, negates abilities, harms trespassers, and may banish targets to another plane.</p>
+    <p>Barriers that exclude creatures cannot push them. Damage to a concentrated barrier may rebound on its Manipulator.</p>
 </section>
 
 <section class="card-section">
@@ -489,8 +489,8 @@ existence. In the eyes of architects, engineers, and warlords, nothing can take 
 
 <section class="card-section">
     <h3>Description</h3>
-    <p> Perceiving the unseen, learning secrets long forgotten, predicting the future, and foiling deceptive Sigils and their effects. The Sigil acts like an extension of your vision and is most effective at whatever holds your focus.</p>
-    <p>Using Eola forcibly opens the manipulator’s “Third Eye,” which allows them to see beyond the physical Realm and into the Kingdom’s In-Between. This experience can be extremely overwhelming to the uninitiated.</p>
+    <p>Eola reveals the unseen, forgotten secrets, possible futures, and deceptive Majik. The Sigil extends perception toward whatever holds the Manipulator’s focus.</p>
+    <p>Eola forcibly opens the “Third Eye” into the Kingdom’s In-Between—an overwhelming experience for the uninitiated.</p>
 </section>
 
 <section class="card-section">
@@ -545,8 +545,8 @@ existence. In the eyes of architects, engineers, and warlords, nothing can take 
 
 <section class="card-section">
     <h3>Description</h3>
-    <p> Governed entirely by the Crimson Tide, Coga unleashes tidal forces that release rapacious energy, which erupts into theatrical explosions. In effect, Coga allows you to throw Majik that seems to appear out of thin air.</p>
-    <p>Coga should be handled with extreme care. Sigils crafted with Coga always cause harm to creatures, objects, and structures, and do not work if they are not paired with at least one Element Rune.</p>
+    <p>Governed by the Crimson Tide, Coga unleashes explosive force that seems to appear from nowhere.</p>
+    <p>Coga always harms creatures, objects, or structures and does nothing without an Element Rune.</p>
 </section>
 
 <section class="card-section">
@@ -592,7 +592,54 @@ existence. In the eyes of architects, engineers, and warlords, nothing can take 
     <h3>Notes</h3>
     <p>"Energy is the ability to do work... it can change its form, but it cannot be created or destroyed."</p>
 </section>`
+    },
+    aer: {
+        image: "/assets/Runes/Aer.png",
+        html: `<div class="element-card-layout">
+<div class="rune-title">ELEMENT RUNE</div>
+<div class="rune-subtitle">ELEMENT — The Vibration Rune</div>
+<div class="rune-quote">"There is geometry in the humming of the strings, there is music in the spacing of the spheres."</div>
+
+<section class="card-section element-description">
+    <h3>Description</h3>
+    <p>The Vibration Element allows you to create percussive noises loud enough to cause damage. Technologists call this the “Sonic” Element.</p>
+</section>
+
+<section class="element-discharge">
+    <div class="element-discharge-label">Elemental Discharge</div>
+    <div class="element-discharge-rule">When this Rune is added to a Sigil, its element is present in the discharge, manifestation, damage, or sensory expression of the Sigil. Activating an Element Rune costs 1 Mana.</div>
+</section>
+
+<section class="element-component-board">
+    <div class="element-component-column">
+        <h3>Material Components</h3>
+        <p><strong>Thunder Twig.</strong> Thunder Twig is closely associated with the Aer Rune. Adding it to a potion will allow the alchemist to deafen a target for 1 minute.</p>
+        <p><strong>Tourmaline.</strong> A gemstone rumored to be born from a dying star, the many shades of tourmaline ripple and inspire wonder. It has the remarkable ability to resonate at varying frequencies, making a gentle 'humming' sound. </p>
+        <p><strong>Yokai Ectochitin.</strong> The fibrous chitin of the shapeshifting extradimensional insectoid species called Yokai is well known to embolden vibration and make for impressive concussive instruments.</p>
+        <p><strong>Maple Wood.</strong> The Lyri prize fiddles, lutes, and gitterns made with wood from the maple tree, both because the tree itself is associated with the very concept of music, and because maple makes a fine foci for the Aer Rune.</p>
+    </div>
+    <div class="element-component-column">
+        <h3>Spatial Components</h3>
+        <p><strong>The March of Color.</strong> The northern migration of the Lyri, a culture of nomadic musicians, performers, and athletes, sweep along the southern plains of Namoria and up to Janisport in time for the Harvest Tournament is a raucous walking jamboree that can be heard two days before it arrives.</p>
+        <p><strong>The Ziggurat of Na'kappa.</strong> The grand Temple of the Templars of Na'kappa lay deep in the Valon'darian swamp known as the Blodwych. Templars of the World Snake speak of standing at the base of the staircase and clapping their hands; the sound bounces off the narrow stone risers to create a haunting shrill sound.</p>
+        <p><strong>The Church of Luminous.</strong> Not the organization itself, but the building design itself. Luminous pious ceremonies are raucous affairs, where up to thousands mutter prayers out of sync, priests shout liturgies, and various tools are wielded in public view.</p>
+    </div>
+    <div class="element-component-column">
+        <h3>Temporal Components</h3>
+        <p><strong>Autumn Equinox.</strong> The 21st of Hazel Moon, commonly called "The Fading," is the first signs of harvest and among Musicians and Artists is the best night of the year to create; celebrations are often quite rowdy. </p>
+        <p><strong>The Day of Chimes.</strong> The 25th day of Elder Moon, called "The Freeze." The haunting wail of Old man Winter's winds through the frigid air is so familiar that numerous cultures hang chimes in windows, thresholds, and trees to stave off the encroaching bleak.</p>
+        <p><strong>Crystal Tuning Fork.</strong> A high-precision mechanical instrument that oscillates at an exact, unwavering frequency when struck. They never fall out of tune.</p>
+    </div>
+</section>
+
+<section class="The universe is a constant vibration... what we call matter is only a condensed form of sound.">
+    <h3>Notes</h3>
+    <p>“NOTES QUOTE.”</p>
+</section>
+</div>`
     }
+
+
 
 };
 
