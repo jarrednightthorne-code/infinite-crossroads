@@ -47,8 +47,8 @@ body {
   width: 17.4%;
   height: 5.4%;
   display: block;
-  background: rgba(135, 0, 0, 0.35);
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: transparent;
+  border: none;
   cursor: pointer;
 }
 
