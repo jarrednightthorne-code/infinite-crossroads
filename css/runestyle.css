@@ -45,6 +45,32 @@ html, body {
     height: 63px;
 }
 
+/* ===== DRAWER HOVER COMPASS ===== */
+.drawer-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 54px;
+    height: 54px;
+    background: url("/assets/Icons/crossroads_compass.png") center / contain no-repeat;
+    transform: translate(-50%, -50%) scale(0.72);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.drawer-btn:hover::after,
+.drawer-btn:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Archive artwork remains unchanged on hover. */
+.archive-btn::after {
+    display: none;
+}
+
 /* DEBUG MODE (REMOVE LATER) */
 .drawer-btn.debug {
     background: rgba(255, 0, 0, 0.25);
@@ -335,4 +361,12 @@ html, body {
     font-size: 11.5px;
     line-height: 1.25;
 }
+
+/* ===== RUNE BUTTON FINALIZATION NOTES =====
+   Keep .debug on while aligning.
+   When placement is final:
+   - remove the debug class from HTML buttons, OR
+   - replace the debug rule below with transparent styles.
+   Hover icon pass should happen after placement is locked.
+===== */
 
