@@ -1,1 +1,283 @@
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000}body{overflow-x:hidden}.rules-page{width:100%;min-height:100vh;background:#000}.rules-board{position:relative;width:min(100vw,1920px);margin:0 auto;aspect-ratio:16/9;overflow:hidden;font-family:Georgia,"Times New Roman",serif;color:#d9b866}.rules-bg{position:absolute;inset:0;width:100%;height:100%;display:block;user-select:none;pointer-events:none}.field{position:absolute;z-index:2;overflow:hidden;text-shadow:0 1px 1px #000}.field h1,.field h2,.field h3,.field h4,.field p,.field ul{margin-top:0}.field h1{margin-bottom:.1em;font-size:clamp(2rem,4.1vw,5rem);line-height:.9;letter-spacing:.08em;text-transform:uppercase}.field h2{margin-bottom:.25em;font-size:clamp(1rem,1.4vw,1.7rem);letter-spacing:.12em;text-transform:uppercase}.field h3{margin-bottom:.25em;font-size:clamp(.8rem,1.05vw,1.35rem);line-height:1;letter-spacing:.06em;text-transform:uppercase;font-variant:small-caps}.field h4{margin-bottom:.4em;font-size:clamp(.62rem,.75vw,.95rem);line-height:1;letter-spacing:.08em;text-transform:uppercase;font-variant:small-caps}.field p,.field li{font-size:clamp(.52rem,.67vw,.9rem);line-height:1.28}.field ul{padding-left:1.1em;margin-bottom:.5em}.system-line{font-size:clamp(.6rem,.8vw,1rem);letter-spacing:.03em}.field-header{left:23.5%;top:5.1%;width:53%;height:12.6%;text-align:center}.field-left-note{left:4.1%;top:9.9%;width:6.4%;height:9.2%;text-align:center;color:#201107;text-shadow:none;transform:rotate(-2deg)}.field-left-note p,.field-right-note p,.field-right-note h3{color:#201107;text-shadow:none}.field-right-note{left:88.2%;top:5.7%;width:6.9%;height:10.7%;text-align:center;transform:rotate(1deg)}.field-engine{left:4.9%;top:22.2%;width:26%;height:7%;color:#211307;text-shadow:none}.field-roll{left:6.2%;top:31.5%;width:9.4%;height:6.5%;text-align:center}.field-read{left:16.2%;top:31.5%;width:9.5%;height:6.5%;text-align:center}.field-resolve{left:26%;top:31.5%;width:9.8%;height:6.5%;text-align:center}.field-degree{left:32.4%;top:22.3%;width:36.3%;height:18.1%;text-align:center}.field-degree table{width:95%;margin:.2em auto;border-collapse:collapse;font-size:clamp(.42rem,.55vw,.72rem)}.field-degree th,.field-degree td{border:1px solid rgba(216,184,106,.45);padding:.18em .35em}.field-degree .table-note{margin:.4em auto 0;font-size:clamp(.45rem,.55vw,.7rem);line-height:1.18}.field-checks{left:70.1%;top:23.5%;width:22.4%;height:15%;color:#211307;text-shadow:none}.field-omen{left:4.3%;top:48.2%;width:16.4%;height:18%}.field-balance{left:43.4%;top:47.6%;width:13.2%;height:18%;text-align:center}.field-fortune{left:81.3%;top:48.2%;width:14.6%;height:18%;text-align:right}.big-rule{margin-top:.65em;font-size:clamp(.7rem,.9vw,1.05rem)!important}.field-opposed{left:4.3%;top:72.4%;width:12.2%;height:13.2%}.field-helping{left:18%;top:72.4%;width:12.2%;height:13.2%}.field-turns{left:31.7%;top:72.4%;width:12.2%;height:13.2%}.field-natural{left:45.6%;top:72.4%;width:21.2%;height:13.2%}.field-try{left:68.9%;top:72.4%;width:12.3%;height:13.2%}.field-complexity{left:82.6%;top:72.4%;width:12.4%;height:13.2%}.field-framework{left:28%;top:91%;width:45%;height:5.7%;color:#211307;text-align:center;text-shadow:none}.field-astra{left:77.1%;top:91%;width:17.9%;height:5.7%;text-align:center}.archive-debug-btn{position:absolute;z-index:5;left:4.4%;top:90%;width:17.4%;height:5.4%;display:block;background:rgba(135,0,0,.35);border:2px solid rgba(255,255,255,.9);cursor:pointer}.archive-debug-btn::after{content:"";position:absolute;left:50%;top:50%;width:42%;aspect-ratio:1/1;background:url("/assets/Icons/crossroads_compass.png") center/contain no-repeat;transform:translate(-50%,-50%) scale(.7);opacity:0;transition:opacity .18s ease,transform .18s ease;pointer-events:none}.archive-debug-btn:hover::after,.archive-debug-btn:focus-visible::after{opacity:1;transform:translate(-50%,-50%) scale(1)}@media(max-width:900px){.field p,.field li{line-height:1.16}.field h3{margin-bottom:.15em}}
+
+/* ===== RULES LEDGER ALIGNMENT PASS 2 ===== */
+
+.field h1 {
+  font-size: clamp(1.8rem, 3.8vw, 4.45rem);
+  line-height: 0.86;
+}
+
+.field h2 {
+  font-size: clamp(0.9rem, 1.15vw, 1.45rem);
+}
+
+.field h3 {
+  font-size: clamp(0.68rem, 0.86vw, 1.08rem);
+  line-height: 0.95;
+}
+
+.field h4 {
+  font-size: clamp(0.5rem, 0.6vw, 0.78rem);
+}
+
+.field p,
+.field li {
+  font-size: clamp(0.43rem, 0.55vw, 0.72rem);
+  line-height: 1.16;
+}
+
+.field ul {
+  margin: 0;
+  padding-left: 1em;
+}
+
+.field-header {
+  left: 24.6%;
+  top: 5.6%;
+  width: 51.5%;
+  height: 11.4%;
+}
+
+.field-left-note {
+  left: 4.3%;
+  top: 11.2%;
+  width: 5.7%;
+  height: 7.6%;
+}
+
+.field-left-note p,
+.field-right-note p {
+  font-size: clamp(0.35rem, 0.48vw, 0.62rem);
+  line-height: 1.18;
+}
+
+.field-right-note {
+  left: 88.7%;
+  top: 5.9%;
+  width: 5.9%;
+  height: 9.5%;
+}
+
+.field-right-note h3 {
+  font-size: clamp(0.55rem, 0.76vw, 0.95rem);
+}
+
+.field-engine {
+  left: 5.0%;
+  top: 22.7%;
+  width: 26%;
+  height: 6.5%;
+}
+
+.field-engine h3 {
+  font-size: clamp(0.72rem, 0.92vw, 1.16rem);
+}
+
+.field-engine p {
+  font-size: clamp(0.42rem, 0.56vw, 0.72rem);
+}
+
+.field-roll,
+.field-read,
+.field-resolve {
+  top: 32.1%;
+  height: 5.6%;
+}
+
+.field-roll {
+  left: 6.5%;
+  width: 7.8%;
+}
+
+.field-read {
+  left: 16.4%;
+  width: 8.2%;
+}
+
+.field-resolve {
+  left: 26.3%;
+  width: 8.9%;
+}
+
+.field-roll h4,
+.field-read h4,
+.field-resolve h4 {
+  margin-bottom: 0.25em;
+  font-size: clamp(0.55rem, 0.72vw, 0.88rem);
+}
+
+.field-roll p,
+.field-read p,
+.field-resolve p {
+  font-size: clamp(0.4rem, 0.54vw, 0.68rem);
+  line-height: 1.1;
+}
+
+.field-degree {
+  left: 33.0%;
+  top: 22.65%;
+  width: 35.5%;
+  height: 17.4%;
+}
+
+.field-degree h3 {
+  font-size: clamp(0.72rem, 0.9vw, 1.1rem);
+  margin-bottom: 0.05em;
+}
+
+.field-degree h4 {
+  font-size: clamp(0.48rem, 0.6vw, 0.75rem);
+  margin-bottom: 0.25em;
+}
+
+.field-degree table {
+  width: 92%;
+  font-size: clamp(0.33rem, 0.43vw, 0.57rem);
+}
+
+.field-degree th,
+.field-degree td {
+  padding: 0.08em 0.2em;
+}
+
+.field-degree .table-note {
+  font-size: clamp(0.34rem, 0.43vw, 0.56rem);
+  line-height: 1.08;
+  margin-top: 0.25em;
+}
+
+.field-checks {
+  left: 70.7%;
+  top: 24.0%;
+  width: 20.8%;
+  height: 14.4%;
+}
+
+.field-checks h3 {
+  font-size: clamp(0.68rem, 0.88vw, 1.05rem);
+}
+
+.field-checks p,
+.field-checks li {
+  font-size: clamp(0.4rem, 0.54vw, 0.68rem);
+}
+
+.field-omen {
+  left: 4.4%;
+  top: 48.35%;
+  width: 15.4%;
+  height: 17.4%;
+}
+
+.field-balance {
+  left: 43.2%;
+  top: 47.65%;
+  width: 13.8%;
+  height: 17.8%;
+}
+
+.field-fortune {
+  left: 82.0%;
+  top: 48.35%;
+  width: 13.1%;
+  height: 17.4%;
+}
+
+.field-omen h3,
+.field-fortune h3,
+.field-balance h3 {
+  font-size: clamp(0.72rem, 0.95vw, 1.18rem);
+}
+
+.field-omen h4,
+.field-fortune h4 {
+  font-size: clamp(0.45rem, 0.58vw, 0.72rem);
+}
+
+.field-omen p,
+.field-fortune p,
+.field-balance p {
+  font-size: clamp(0.4rem, 0.54vw, 0.67rem);
+  line-height: 1.18;
+}
+
+.big-rule {
+  font-size: clamp(0.56rem, 0.72vw, 0.86rem) !important;
+}
+
+.field-opposed,
+.field-helping,
+.field-turns,
+.field-natural,
+.field-try,
+.field-complexity {
+  top: 72.9%;
+  height: 11.8%;
+}
+
+.field-opposed { left: 4.4%; width: 11.8%; }
+.field-helping { left: 18.0%; width: 11.8%; }
+.field-turns { left: 31.8%; width: 11.8%; }
+.field-natural { left: 45.7%; width: 20.6%; }
+.field-try { left: 68.9%; width: 11.8%; }
+.field-complexity { left: 82.6%; width: 11.9%; }
+
+.field-opposed h3,
+.field-helping h3,
+.field-turns h3,
+.field-natural h3,
+.field-try h3,
+.field-complexity h3 {
+  font-size: clamp(0.58rem, 0.76vw, 0.94rem);
+  margin-bottom: 0.35em;
+}
+
+.field-opposed p,
+.field-helping p,
+.field-turns p,
+.field-natural p,
+.field-try p,
+.field-complexity p,
+.field-turns li {
+  font-size: clamp(0.37rem, 0.5vw, 0.64rem);
+  line-height: 1.16;
+}
+
+.field-framework {
+  left: 28.0%;
+  top: 91.0%;
+  width: 45.0%;
+  height: 5.0%;
+}
+
+.field-framework h3 {
+  font-size: clamp(0.6rem, 0.84vw, 1.05rem);
+  margin-bottom: 0.25em;
+}
+
+.field-framework p {
+  font-size: clamp(0.36rem, 0.49vw, 0.62rem);
+  line-height: 1.15;
+}
+
+.field-astra {
+  left: 77.4%;
+  top: 91.1%;
+  width: 17.0%;
+  height: 4.9%;
+}
+
+.field-astra h3 {
+  font-size: clamp(0.56rem, 0.76vw, 0.95rem);
+}
+
+.field-astra p {
+  font-size: clamp(0.38rem, 0.52vw, 0.66rem);
+}
+
+.archive-debug-btn {
+  left: 4.6%;
+  top: 90.3%;
+  width: 17.1%;
+  height: 4.9%;
+}
