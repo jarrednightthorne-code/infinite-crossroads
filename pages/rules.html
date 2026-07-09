@@ -3,54 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>System Ledger — The Infinite Crossroads</title>
-  <link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../rules_alignment_fix.css">
+  <title>Rules Ledger — The Infinite Crossroads</title>
+  <link rel="icon" type="image/png" href="/assets/Icons/crossroads_compass.png">
+  <link rel="stylesheet" href="/css/rules.css">
 </head>
-
 <body>
-
-  <div class="site-shell">
-
-    <header>
-      <div class="system-line">Schola of the Fractured Prism // System Ledger</div>
-      <h1>The Eternity Engine</h1>
-      <div class="subtitle">Recovered Rules Archive</div>
-    </header>
-
-    <main>
-
-      <section class="panel framed">
-        <span class="corner-bl"></span>
-        <span class="corner-br"></span>
-
-        <div class="kicker">Rules Ledger</div>
-        <h2>The System Beneath the World</h2>
-
-        <p>
-          The Eternity Engine is a modular tabletop system designed for living worlds and evolving narratives.
-        </p>
-      </section>
-
-      <section class="panel framed">
-        <span class="corner-bl"></span>
-        <span class="corner-br"></span>
-
-        <div class="kicker">Archive Access Required</div>
-        <h2>Restricted Material</h2>
-
-        <p>🔒 This content requires account access.</p>
-
-        <div class="button-row">
-          <button class="btn">Login (Coming Soon)</button>
-          <button class="btn secondary">Register</button>
-        </div>
-
-      </section>
-
-    </main>
-
-  </div>
-
+  <main class="rules-page">
+    <section class="rules-board" aria-label="Rules Ledger">
+      <img src="/assets/Cards/card_rules.png" class="rules-bg" alt="Rules Ledger background">
+      <div class="field field-header"><div class="system-line">Schola of the Fractured Prism &nbsp; // &nbsp; Recovered Rules Archive</div><h1>Rules Ledger</h1><h2>The Eternity Engine</h2><p>Simple to learn. Infinite in depth. Your Tale, your table.</p></div>
+      <div class="field field-left-note"><p>All knowledge has a price.<br>All power has a cost.</p></div>
+      <div class="field field-right-note"><h3>Field Note</h3><p>These protocols form the foundation of all Tales within Mani’Erin. The Engine is constant. The story is yours.</p></div>
+      <div class="field field-engine"><h3>The Eternity Engine</h3><p>Every meaningful action is resolved with a Check.<br>The formula is simple. The outcomes are anything but.</p></div>
+      <div class="field field-roll"><h4>Roll</h4><p>1d20 +<br>Attribute Die</p></div>
+      <div class="field field-read"><h4>Read</h4><p>Compare the total<br>to the Degree of<br>Success</p></div>
+      <div class="field field-resolve"><h4>Resolve</h4><p>The result determines<br>success, cost,<br>consequence, or bonus</p></div>
+      <div class="field field-degree"><h3>Degree of Success</h3><h4>The Resolution Matrix</h4><table><thead><tr><th>Degree</th><th>Result</th><th>Type</th><th>Effect</th></tr></thead><tbody><tr><td>25+</td><td>Extraordinary Success</td><td>Exceptional</td><td>Cinematic outcome. Extra benefits at GM’s discretion.</td></tr><tr><td>20–24</td><td>Major Success</td><td>Exceptional</td><td>Outstanding success with significant advantage.</td></tr><tr><td>15–19</td><td>Success</td><td>Standard</td><td>Task accomplished as intended.</td></tr><tr><td>10–14</td><td>Partial Success</td><td>Standard</td><td>Success with a cost, complication, or limitation.</td></tr><tr><td>5–9</td><td>Minor Success</td><td>Marginal</td><td>Bare success. Minimal progress or fragile outcome.</td></tr><tr><td>1–4</td><td>Failure</td><td>Failure</td><td>Task fails. GM introduces a consequence.</td></tr><tr><td>0 or less</td><td>Critical Failure</td><td>Failure</td><td>Severe consequence. Situation worsens.</td></tr></tbody></table><p class="table-note">Degree of Success is compared to the Target Number (TN) set by the GM.<br>Higher totals yield better outcomes. Modifiers apply before comparison.</p></div>
+      <div class="field field-checks"><h3>Checks & Target Numbers</h3><p>A Check is made when the outcome is uncertain and meaningful.</p><ul><li>Easy Tasks: TN 5–9</li><li>Average Tasks: TN 10–14</li><li>Difficult Tasks: TN 15–19</li><li>Extreme Tasks: TN 20+</li></ul><p>The GM sets the TN based on complexity, opposition, environment, and narrative weight.</p></div>
+      <div class="field field-omen"><h3>Omen</h3><h4>Beast of Ill-Omen</h4><p>The dark Tiangou.<br>A creature of misfortune and retribution.</p><p>Its presence twists fate against those who would cause harm.</p><p class="big-rule">Roll twice and take<br>the <strong>LOWER</strong> result.</p></div>
+      <div class="field field-balance"><h3>Siblings of Balance</h3><p>From the space between Realms, Omen and Fortune are legendary Tiangou whose duality embodies the unseen hand of fate.</p><p>Neither is evil.<br>Neither is good.<br>They are balance.</p></div>
+      <div class="field field-fortune"><h3>Fortune</h3><h4>Beast of Blessing</h4><p>The radiant Tiangou.<br>A creature of blessing and impossible luck.</p><p>Its presence bends fate to protect and empower its favored.</p><p class="big-rule">Roll twice and take<br>the <strong>HIGHER</strong> result.</p></div>
+      <div class="field field-opposed"><h3>Opposed Tasks</h3><p>When two or more characters actively oppose one another, each makes a Check.</p><p>Highest Degree of Success wins.</p><p>Ties go to the defender.</p></div>
+      <div class="field field-helping"><h3>Helping</h3><p>A character may assist another who is attempting a task. The helper makes a Check.</p><p>Success grants a +2 bonus to the primary character.</p></div>
+      <div class="field field-turns"><h3>Turns & Actions</h3><p>Each character, per turn:</p><ul><li>Major Actions — 1</li><li>Minor Actions — 1</li><li>Swift Actions — 1</li><li>Reactions — Conditional</li></ul><p>Plan carefully. Every action matters.</p></div>
+      <div class="field field-natural"><h3>Natural 20 / Natural 1</h3><p><strong>Natural 20:</strong> Automatic success. Apply Degree of Success as normal.</p><p><strong>Natural 1:</strong> Automatic failure. Apply Degree of Success as normal.</p><p>These are not Critical Hits or Fumbles.</p></div>
+      <div class="field field-try"><h3>Try, Try Again</h3><p>A character may repeat a failed Check during the same scene.</p><p>Each retry increases the TN by +5.</p><p>Narrate the cost of pushing fate further.</p></div>
+      <div class="field field-complexity"><h3>Adjusting Complexity</h3><p>The Engine bends to the Tale.</p><p>Simplify for speed.</p><p>Add depth for drama.</p><p>You decide how complex or cinematic your game will be.</p></div>
+      <div class="field field-framework"><h3>The Engine is a Framework, Not a Prison</h3><p>The Eternity Engine is designed to be adaptable. Use these rules as written, or modify them to fit your Table, your Players, and your Story.</p><p>What matters is not the rules themselves, but the legends you forge together.</p></div>
+      <div class="field field-astra"><h3>Astra Inclinant, Sed Non Obligant.</h3><p>The stars incline, they do not compel.</p></div>
+      <a class="archive-debug-btn" href="https://www.infinite-crossroads.com/index.html" aria-label="Return to Archive"></a>
+    </section>
+  </main>
 </body>
 </html>
