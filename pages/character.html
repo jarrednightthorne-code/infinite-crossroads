@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Infinite Crossroads Character Dossier — an overview of character creation, identity, archetypes, traits, and deviations." />
+  <meta name="description" content="The Infinite Crossroads Character Dossier — character creation, identity, archetypes, specializations, talents, and deviations." />
   <title>Character Dossier — The Infinite Crossroads</title>
   <link rel="icon" type="image/png" href="../assets/Icons/crossroads_compass.png" />
   <link rel="stylesheet" href="/css/character.css" />
@@ -49,83 +49,57 @@
     </header>
 
     <main>
-      <section class="rules-intro framed-panel" aria-labelledby="rules-title">
-        <span class="corner-bl" aria-hidden="true"></span>
-        <span class="corner-br" aria-hidden="true"></span>
+      <section class="artifact-section infographic-section" aria-label="Character creation infographic">
+        <div class="artifact-card infographic-card">
+          <img src="../assets/Cards/card_character_infographic.png" alt="The Making of a Character infographic showing the six steps of character creation." />
 
-        <div class="section-heading">
-          <div class="kicker">Recovered Entry // Character Creation Protocol</div>
-          <h2 id="rules-title">The Making of a Character</h2>
-          <p>This field is reserved for the finished character-creation infographic.</p>
-        </div>
+          <!-- DEBUG HITBOXES: move and resize these in character.css -->
+          <a class="debug-hitbox debug-return" href="https://www.infinite-crossroads.com/index.html" aria-label="Return to Archive">
+            <span>RETURN DEBUG</span>
+          </a>
 
-        <div class="infographic-field" role="img" aria-label="Character creation infographic field">
-          <span>CHARACTER CREATION INFOGRAPHIC</span>
-          <small>Replace this field with the completed rules image.</small>
+          <button class="debug-hitbox debug-builder" type="button" disabled aria-label="Character Creator under construction">
+            <span>BUILDER DEBUG</span>
+          </button>
         </div>
       </section>
 
       <div class="brass-divider d1" aria-hidden="true"></div>
 
-      <section class="scroll-section" id="genus" aria-labelledby="genus-title">
-        <div class="section-copy">
-          <div class="kicker">Identity Layer I</div>
-          <h2 id="genus-title">Genus</h2>
-          <p>Choose your people.</p>
-        </div>
-        <figure class="scroll-card">
+      <section class="artifact-section" aria-label="Genus scrollwork">
+        <figure class="artifact-card">
           <img src="../assets/Cards/card_genus.png" alt="Explorer's scrollwork comparing the playable Genus of The Infinite Crossroads." />
         </figure>
       </section>
 
       <div class="brass-divider d3" aria-hidden="true"></div>
 
-      <section class="scroll-section" id="lineage" aria-labelledby="lineage-title">
-        <div class="section-copy">
-          <div class="kicker">Identity Layer II</div>
-          <h2 id="lineage-title">Lineage</h2>
-          <p>Choose your bloodline.</p>
-        </div>
-        <figure class="scroll-card">
+      <section class="artifact-section" aria-label="Lineage scrollwork">
+        <figure class="artifact-card">
           <img src="../assets/Cards/card_lineage.png" alt="Explorer's scrollwork comparing Aos'si and Malum Lineages." />
         </figure>
       </section>
 
       <div class="brass-divider d6" aria-hidden="true"></div>
 
-      <section class="scroll-section" id="archetype" aria-labelledby="archetype-title">
-        <div class="section-copy">
-          <div class="kicker">The First Great Choice</div>
-          <h2 id="archetype-title">Archetype</h2>
-          <p>Choose your calling.</p>
-        </div>
-        <figure class="scroll-card">
+      <section class="artifact-section" aria-label="Archetype scrollwork">
+        <figure class="artifact-card">
           <img src="../assets/Cards/card_archetype.png" alt="Explorer's scrollwork presenting the Warrior, Sage, and Trickster Archetypes." />
         </figure>
       </section>
 
       <div class="brass-divider d2" aria-hidden="true"></div>
 
-      <section class="scroll-section" id="specializations" aria-labelledby="specializations-title">
-        <div class="section-copy">
-          <div class="kicker">Paths Within the Path</div>
-          <h2 id="specializations-title">Specializations</h2>
-          <p>Master your craft.</p>
-        </div>
-        <figure class="scroll-card">
+      <section class="artifact-section" aria-label="Specializations scrollwork">
+        <figure class="artifact-card">
           <img src="../assets/Cards/card_specialization.png" alt="Explorer's scrollwork presenting six example Specializations." />
         </figure>
       </section>
 
       <div class="brass-divider d4" aria-hidden="true"></div>
 
-      <section class="scroll-section" id="traits" aria-labelledby="traits-title">
-        <div class="section-copy">
-          <div class="kicker">The Shape of Experience</div>
-          <h2 id="traits-title">Traits &amp; Talents</h2>
-          <p>Develop your expertise.</p>
-        </div>
-        <figure class="scroll-card">
+      <section class="artifact-section" aria-label="Traits and Talents scrollwork">
+        <figure class="artifact-card">
           <img src="../assets/Cards/card_traits.png" alt="Explorer's scrollwork showing Skills and example Talents." />
         </figure>
       </section>
@@ -133,43 +107,48 @@
       <div class="brass-divider d7" aria-hidden="true"></div>
 
       <section class="deviations-section" id="deviations" aria-labelledby="deviations-title">
-        <div class="section-copy">
-          <div class="kicker">Where Rules Become Personal</div>
-          <h2 id="deviations-title">Deviations</h2>
-          <p>Add three to five examples across different Tiers.</p>
+        <div class="section-heading">
+          <div class="kicker">Recovered Examples // Restricted Adaptations</div>
+          <h2 id="deviations-title">Featured Deviations</h2>
+          <p>Deviations bend the ordinary rules of character creation and advancement. Open an entry to examine the recovered record.</p>
         </div>
 
-        <div class="deviation-field" contenteditable="true" spellcheck="true" aria-label="Editable Deviations field">
-          <h3>Example Deviations</h3>
-          <p><strong>Tier I:</strong> Replace this with a low-tier Deviation.</p>
-          <p><strong>Tier II:</strong> Replace this with another example.</p>
-          <p><strong>Tier III:</strong> Replace this with a mid-tier Deviation.</p>
-          <p><strong>Tier IV:</strong> Optional fourth example.</p>
-          <p><strong>Tier V:</strong> Optional high-tier example.</p>
+        <div class="deviation-list">
+          <details class="deviation-entry">
+            <summary><span class="tier-mark">Tier I</span><span class="deviation-name">Bitter Warfare</span></summary>
+            <div class="deviation-copy">
+              <p>You have survived savage underworld wars in narrow city streets or have grown deaf to the cacophony of steel and flesh as ordered ranks clash on the battlefield. You won’t give in to bad situations. You will, in fact, break before you bend.</p>
+              <p>You never take penalties for being outnumbered in combat. Fortune always smiles on your attacks if you or your foe are surrounded by obstacles or other combatants on at least three sides, not including the floor or the ceiling.</p>
+              <p>However, you must make a Resolve check before you may disengage from any fight.</p>
+            </div>
+          </details>
+
+          <details class="deviation-entry">
+            <summary><span class="tier-mark">Tier I</span><span class="deviation-name">Legacy</span></summary>
+            <div class="deviation-copy">
+              <p>Some people are born for greatness. Others are born of greatness, and their deeds remain to be seen. Nevertheless, being born of greatness carries its fair share of benefits.</p>
+              <p>You are the child of someone famous and important to the history of Mani’Erin. Your actions reflect upon your ancestry, and you receive special benefits from your Legacy.</p>
+            </div>
+          </details>
+
+          <details class="deviation-entry">
+            <summary><span class="tier-mark">Tier II</span><span class="deviation-name">Combat Reflexes</span></summary>
+            <div class="deviation-copy">
+              <p>Swordplay is like dancing, except your partner wants to trip, embarrass, and possibly kill you. Yet, if you know their tune and where you should be, you can react to their efforts as if you had foreseen it all.</p>
+              <p>Whenever you take the Dodge Action on your turn during Conflict, you may take a Reaction for each action that happens in the Conflict until the start of your next turn. You are still required to expend Resources.</p>
+            </div>
+          </details>
+
+          <details class="deviation-entry">
+            <summary><span class="tier-mark">Tier III</span><span class="deviation-name">Promise of Steel</span></summary>
+            <div class="deviation-copy">
+              <p>New heights of martial prowess have been your only guiding light. You have chased ever higher peaks on the path of mastery, a path painted by the blood of your victims.</p>
+              <p>Beware. Those who live by the sword, die by the sword.</p>
+              <p>Choose a favored weapon type. Fortune smiles on all Weapon Maneuvers against targets that you have wounded.</p>
+            </div>
+          </details>
         </div>
       </section>
-
-      <div class="brass-divider d5" aria-hidden="true"></div>
-
-      <section class="simple-panel" aria-labelledby="simple-title">
-        <div class="kicker">Dossier Complete</div>
-        <h2 id="simple-title">It’s That Simple!</h2>
-        <p>Start with identity. Choose a path. Add the details that make the character yours.</p>
-      </section>
-
-      <div class="footer-actions" aria-label="Character Dossier navigation">
-        <a class="archive-button return-button" href="https://www.infinite-crossroads.com/index.html">
-          <span class="button-icon" aria-hidden="true"></span>
-          <span>Return to Archive</span>
-        </a>
-
-        <div class="builder-wrap" aria-label="Character Builder under construction">
-          <button class="archive-button builder-button" type="button" disabled>
-            <span>Character Builder</span>
-          </button>
-          <span class="construction-sticker">Under Construction</span>
-        </div>
-      </div>
     </main>
 
     <div class="archive-footer-art" aria-hidden="true">
