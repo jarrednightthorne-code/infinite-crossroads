@@ -7,18 +7,18 @@
   --deep-ink: #17120f;
   --scanline: rgba(238,227,201,.045);
 
-  --corner-tl: url("assets/Brass/brass_corner_top_left.png");
-  --corner-tr: url("assets/Brass/brass_corner_top_right.png");
-  --corner-bl: url("assets/Brass/brass_corner_bottom_left.png");
-  --corner-br: url("assets/Brass/brass_corner_bottom_right.png");
-  --divider-1: url("assets/Brass/bespokebrass1.png");
-  --divider-2: url("assets/Brass/bespokebrass2.png");
-  --divider-3: url("assets/Brass/bespokebrass3.png");
-  --divider-4: url("assets/Brass/bespokebrass4.png");
-  --divider-5: url("assets/Brass/bespokebrass5.png");
-  --divider-6: url("assets/Brass/bespokebrass6.png");
-  --divider-7: url("assets/Brass/bespokebrass7.png");
-  --compass: url("assets/Icons/crossroads_compass.png");
+  --corner-tl: url("../assets/Brass/brass_corner_top_left.png");
+  --corner-tr: url("../assets/Brass/brass_corner_top_right.png");
+  --corner-bl: url("../assets/Brass/brass_corner_bottom_left.png");
+  --corner-br: url("../assets/Brass/brass_corner_bottom_right.png");
+  --divider-1: url("../assets/Brass/bespokebrass1.png");
+  --divider-2: url("../assets/Brass/bespokebrass2.png");
+  --divider-3: url("../assets/Brass/bespokebrass3.png");
+  --divider-4: url("../assets/Brass/bespokebrass4.png");
+  --divider-5: url("../assets/Brass/bespokebrass5.png");
+  --divider-6: url("../assets/Brass/bespokebrass6.png");
+  --divider-7: url("../assets/Brass/bespokebrass7.png");
+  --compass: url("../assets/Icons/crossroads_compass.png");
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
