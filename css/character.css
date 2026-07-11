@@ -167,52 +167,62 @@ main { padding: 8px 2px 10px; }
 .artifact-card img { display: block; width: 100%; height: auto; }
 .infographic-section { padding-top: 0; }
 
-/* DEBUG BUTTON OVERLAYS
-   Adjust left/top/width/height until each box sits exactly over the painted button. */
+/* INVISIBLE BUTTON OVERLAYS
+   Positioned over the painted buttons in card_character_infographic.png. */
 .debug-hitbox {
   position: absolute;
   z-index: 10;
   display: grid;
   place-items: center;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: transparent;
   text-decoration: none;
-  font-family: "Courier New", Courier, monospace;
-  font-size: clamp(9px, 1vw, 13px);
-  font-weight: bold;
-  letter-spacing: .8px;
-  color: #fff;
-  cursor: pointer;
+  overflow: visible;
 }
 
-.debug-hitbox span { pointer-events: none; }
+.debug-hitbox span {
+  display: none;
+}
+
+.debug-hitbox::after {
+  content: "";
+  width: clamp(34px, 4.2vw, 52px);
+  aspect-ratio: 1;
+  background: url("../assets/Icons/crossroads_compass.png") center / contain no-repeat;
+  opacity: 0;
+  transform: scale(.82);
+  filter: drop-shadow(0 0 10px rgba(216,184,106,.45));
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+
+.debug-hitbox:hover::after,
+.debug-hitbox:focus-visible::after {
+  opacity: 1;
+  transform: scale(1);
+}
 
 .debug-return {
   left: 4.0%;
-  top: 92.0%;
+  top: calc(92.0% + 10px);
   width: 42.5%;
   height: 5.2%;
-  border: 3px solid #ff3030;
-  background: rgba(255,0,0,.18);
+  cursor: pointer;
 }
 
 .debug-builder {
   left: 53.5%;
-  top: 92.0%;
+  top: calc(92.0% + 10px);
   width: 42.5%;
   height: 5.2%;
-  border: 3px solid #53ff53;
-  background: rgba(0,255,0,.15);
+  cursor: not-allowed;
   opacity: 1;
 }
-
-.debug-return:hover,
-.debug-return:focus-visible {
-  background: rgba(255,0,0,.30);
-  outline: none;
-}
-
-/* When placement is final:
-.debug-hitbox { border: 0; background: transparent; color: transparent; }
-*/
 
 .brass-divider {
   width: min(890px, 100%);
@@ -338,7 +348,6 @@ footer {
   .deviations-section { padding: 30px 18px; }
   .deviation-entry summary { grid-template-columns: 1fr auto; gap: 8px 14px; }
   .tier-mark { grid-column: 1 / -1; }
-  .debug-hitbox { font-size: 7px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
