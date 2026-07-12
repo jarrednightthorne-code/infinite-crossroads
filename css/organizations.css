@@ -1,0 +1,444 @@
+:root {
+  --paper: #eee3c9;
+  --old-gold: #d8b86a;
+  --brass: #b58b45;
+  --ink: #18120d;
+  --panel: rgba(13, 16, 22, .95);
+  --compass: url("../assets/Icons/crossroads_compass.png");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(216,184,106,.12), transparent 25%),
+    linear-gradient(180deg, #050609, #111722 48%, #090806);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,0) 50%, rgba(238,227,201,.04) 50%),
+    radial-gradient(circle, transparent 62%, rgba(0,0,0,.58) 100%);
+  background-size: 100% 4px, 100% 100%;
+  mix-blend-mode: screen;
+}
+
+.site-shell {
+  width: min(1600px, calc(100% - 24px));
+  margin: 20px auto;
+  padding: 16px clamp(8px, 1.5vw, 22px) 24px;
+  border: 1px solid rgba(181,139,69,.56);
+  background: linear-gradient(180deg, rgba(15,23,35,.88), rgba(23,18,15,.94));
+  box-shadow: 0 0 44px rgba(0,0,0,.78), inset 0 0 48px rgba(216,184,106,.055);
+}
+
+.archive-header-art,
+.archive-footer-art {
+  width: calc(100% + 34px);
+  margin-left: -17px;
+  line-height: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 14px rgba(216,184,106,.18));
+}
+
+.archive-header-art img,
+.archive-footer-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-header {
+  padding: 8px 16px 28px;
+  text-align: center;
+}
+
+.system-line {
+  margin-bottom: 10px;
+  color: rgba(238,227,201,.70);
+  font: 12px/1.4 "Courier New", monospace;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--paper);
+  font-size: clamp(38px, 6vw, 74px);
+  line-height: 1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(216,184,106,.20);
+}
+
+.tagline {
+  max-width: 920px;
+  margin: 16px auto 0;
+  color: var(--old-gold);
+  font-size: clamp(15px, 1.8vw, 20px);
+}
+
+.wall-section {
+  padding: 4px;
+}
+
+.poster-wall {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid rgba(216,184,106,.30);
+  background: #080706;
+  box-shadow: 0 18px 46px rgba(0,0,0,.60);
+}
+
+.wall-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* =========================================================
+   DEBUG HITBOXES
+   Each node uses percentage coordinates measured against the
+   1536 × 1024 background image.
+   Move them by changing left/top/width/height below.
+   ========================================================= */
+
+.faction-node {
+  position: absolute;
+  z-index: 5;
+}
+
+.faction-hitbox {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border: 3px solid rgba(255, 48, 48, .95);
+  background: rgba(255, 0, 0, .15);
+  color: #fff;
+  font: 700 clamp(8px, .8vw, 12px)/1.15 "Courier New", monospace;
+  cursor: pointer;
+}
+
+.faction-hitbox span {
+  display: inline-block;
+  padding: 2px 5px;
+  background: rgba(0,0,0,.72);
+}
+
+/* Hover/focus popout */
+
+.faction-popout {
+  position: absolute;
+  z-index: 20;
+  width: clamp(230px, 24vw, 340px);
+  padding: 18px 20px;
+  border: 1px solid rgba(216,184,106,.80);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255,255,255,.18), transparent 24%),
+    linear-gradient(180deg, rgba(238,227,201,.98), rgba(205,180,137,.98));
+  color: var(--ink);
+  box-shadow:
+    0 18px 42px rgba(0,0,0,.60),
+    inset 0 0 18px rgba(91,54,20,.10);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(.97);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+  pointer-events: none;
+  outline: none;
+}
+
+.faction-popout h2 {
+  margin-bottom: 10px;
+  color: #25170d;
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.05;
+}
+
+.faction-popout p {
+  margin-top: 8px;
+  color: rgba(24,18,13,.88);
+  line-height: 1.4;
+}
+
+.faction-popout .recruitment {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.faction-node:hover,
+.faction-node:focus-within {
+  z-index: 50;
+}
+
+.faction-node:hover .faction-popout,
+.faction-node:focus-within .faction-popout {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Default popup placement: right side of hitbox */
+.faction-popout {
+  left: calc(100% + 12px);
+  top: 0;
+}
+
+/* Popup placement helpers */
+.aether .faction-popout,
+.blackguard .faction-popout,
+.swift-mezzo .faction-popout,
+.lamplighters .faction-popout {
+  left: auto;
+  right: calc(100% + 12px);
+}
+
+.tideclaws .faction-popout,
+.hard-hand .faction-popout,
+.swift-mezzo .faction-popout {
+  top: auto;
+  bottom: 0;
+}
+
+/* Poster and graffiti coordinates */
+
+.luminous {
+  left: 3.8%;
+  top: 1.7%;
+  width: 18.2%;
+  height: 42.3%;
+}
+
+.wit {
+  left: 28.3%;
+  top: 7.0%;
+  width: 14.8%;
+  height: 30.2%;
+}
+
+.templars {
+  left: 45.7%;
+  top: 2.0%;
+  width: 14.3%;
+  height: 32.2%;
+}
+
+.lamplighters {
+  left: 65.2%;
+  top: 3.8%;
+  width: 13.0%;
+  height: 26.0%;
+}
+
+.aether {
+  left: 78.6%;
+  top: 1.4%;
+  width: 17.7%;
+  height: 37.4%;
+}
+
+.jericho {
+  left: 11.3%;
+  top: 40.0%;
+  width: 12.9%;
+  height: 29.6%;
+}
+
+.librarum {
+  left: 24.1%;
+  top: 52.0%;
+  width: 12.4%;
+  height: 22.8%;
+}
+
+.circus {
+  left: 41.0%;
+  top: 35.3%;
+  width: 18.2%;
+  height: 36.8%;
+}
+
+.senegal {
+  left: 60.5%;
+  top: 28.8%;
+  width: 13.0%;
+  height: 28.6%;
+}
+
+.blackguard {
+  left: 72.4%;
+  top: 39.4%;
+  width: 17.7%;
+  height: 34.0%;
+}
+
+.swift-mezzo {
+  left: 62.2%;
+  top: 64.3%;
+  width: 12.9%;
+  height: 27.0%;
+}
+
+.tideclaws {
+  left: 8.7%;
+  top: 71.0%;
+  width: 13.8%;
+  height: 20.8%;
+}
+
+.hard-hand {
+  left: 31.2%;
+  top: 71.0%;
+  width: 18.0%;
+  height: 20.4%;
+}
+
+/* Final production style:
+   Replace the red debug styling above with this block.
+
+.faction-hitbox {
+  border: 0;
+  background: transparent;
+  color: transparent;
+}
+
+.faction-hitbox span {
+  display: none;
+}
+
+.faction-hitbox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(34px, 4vw, 54px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) scale(.82);
+  background: var(--compass) center / contain no-repeat;
+  opacity: 0;
+  filter: drop-shadow(0 0 10px rgba(216,184,106,.48));
+  transition: opacity .16s ease, transform .16s ease;
+}
+
+.faction-node:hover .faction-hitbox::after,
+.faction-node:focus-within .faction-hitbox::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+*/
+
+.page-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 24px;
+  padding: 4px;
+}
+
+.archive-button {
+  min-width: 260px;
+  min-height: 66px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border: 1px solid rgba(216,184,106,.82);
+  color: var(--old-gold);
+  background: linear-gradient(180deg, rgba(181,139,69,.18), rgba(7,9,14,.62));
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.compass-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  background: var(--compass) center / contain no-repeat;
+  opacity: 0;
+  transform: scale(.82);
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+.archive-button:hover .compass-icon,
+.archive-button:focus-visible .compass-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.archive-footer-art {
+  margin-top: 26px;
+}
+
+@media (max-width: 900px) {
+  .site-shell {
+    padding: 10px;
+  }
+
+  .archive-header-art,
+  .archive-footer-art {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+
+  .faction-popout {
+    position: fixed;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    width: min(86vw, 360px);
+    transform: translate(-50%, calc(-50% + 10px)) scale(.97);
+  }
+
+  .faction-node:hover .faction-popout,
+  .faction-node:focus-within .faction-popout {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (max-width: 560px) {
+  h1 {
+    letter-spacing: 2px;
+  }
+
+  .faction-hitbox {
+    border-width: 2px;
+    font-size: 6px;
+  }
+
+  .archive-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
