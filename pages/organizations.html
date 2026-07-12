@@ -1,22 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Organizations — The Infinite Crossroads</title>
-<link rel="stylesheet" href="../style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Organizations of Mani’Erin — factions, institutions, guilds, armies, and criminal networks." />
+  <title>Organizations — The Infinite Crossroads</title>
+  <link rel="icon" type="image/png" href="../assets/Icons/crossroads_compass.png" />
+  <link rel="stylesheet" href="/css/organizations.css" />
 </head>
 <body>
-<div class="site-shell">
-  <div class="archive-header-art" aria-hidden="true"><img src="../assets/brass/brass_header.png" alt="" /></div>
-  <header>
-    <div class="system-line">Schola of the Fractured Prism // Archive Node</div>
-    <h1>Organizations</h1>
-    <p class="tagline">This archive page is reserved for future expansion.</p>
-    <p><a href="../index.html" class="btn">Return to Archive</a></p>
-  </header>
-  <div class="archive-footer-art" aria-hidden="true"><img src="../assets/brass/brass_footer.png" alt="" /></div>
-</div>
-<script src="../script.js"></script>
+  <div class="site-shell">
+    <div class="archive-header-art" aria-hidden="true">
+      <img src="../assets/Brass/brass_header.png" alt="" />
+    </div>
+
+    <header class="page-header">
+      <div class="system-line">Schola of the Fractured Prism // Recovered City Notices</div>
+      <h1>Organizations</h1>
+      <p class="tagline">Institutions promise order. Guilds promise opportunity. Armies promise safety. The alleys promise something else.</p>
+    </header>
+
+    <main>
+      <section class="wall-section" aria-label="Interactive faction poster wall">
+        <div class="poster-wall">
+          <img
+            class="wall-image"
+            src="../assets/Cards/card_organizations.png"
+            alt="A crowded stone city wall covered with faction posters, advertisements, wanted notices, and criminal graffiti."
+          />
+
+          <!-- DEBUG HITBOXES
+               Move and resize each box in organizations.css.
+               Remove the debug border/fill styles once placement is final. -->
+
+          <article class="faction-node luminous">
+            <button class="faction-hitbox" type="button" aria-label="Church of Luminous">
+              <span>Church of Luminous</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Church of Luminous</h2>
+              <p>The Light guides. The Light protects. The Light is justice.</p>
+              <p class="recruitment">All are welcome in faith.</p>
+            </div>
+          </article>
+
+          <article class="faction-node wit">
+            <button class="faction-hitbox" type="button" aria-label="College of W.I.T.">
+              <span>College of W.I.T.</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>College of W.I.T.</h2>
+              <p>Wizardry. Innovation. Theory.</p>
+              <p class="recruitment">Enrollment remains open to the curious, the brilliant, and the catastrophically overconfident.</p>
+            </div>
+          </article>
+
+          <article class="faction-node templars">
+            <button class="faction-hitbox" type="button" aria-label="Templars">
+              <span>Templars</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Templars</h2>
+              <p>For home. For hearth. For heart.</p>
+              <p class="recruitment">Choose a Saint. Take an oath. Stand where others cannot.</p>
+            </div>
+          </article>
+
+          <article class="faction-node lamplighters">
+            <button class="faction-hitbox" type="button" aria-label="Lamplighter's Guild">
+              <span>Lamplighter's Guild</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Lamplighter’s Guild</h2>
+              <p>You did not see this mark.</p>
+              <p class="recruitment">We are a candle in the dark.</p>
+            </div>
+          </article>
+
+          <article class="faction-node aether">
+            <button class="faction-hitbox" type="button" aria-label="Church of Aether">
+              <span>Church of Aether</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Church of Aether</h2>
+              <p>Truth is not given. Truth is earned.</p>
+              <p class="recruitment">Question. Seek. Ascend.</p>
+            </div>
+          </article>
+
+          <article class="faction-node jericho">
+            <button class="faction-hitbox" type="button" aria-label="Jericho Express">
+              <span>Jericho Express</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Jericho Express</h2>
+              <p>No matter what. No matter where. We deliver.</p>
+              <p class="recruitment">Minimal questions asked.</p>
+            </div>
+          </article>
+
+          <article class="faction-node librarum">
+            <button class="faction-hitbox" type="button" aria-label="Mystic Librarum">
+              <span>Mystic Librarum</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Mystic Librarum</h2>
+              <p>Master the tides. Pursue truth.</p>
+              <p class="recruitment">Books remember what mages forget.</p>
+            </div>
+          </article>
+
+          <article class="faction-node circus">
+            <button class="faction-hitbox" type="button" aria-label="Circus of the Red Dawn">
+              <span>Circus of the Red Dawn</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Circus of the Red Dawn</h2>
+              <p>Behold the broken. Praise the lost.</p>
+              <p class="recruitment">Wonder awaits beneath the red canvas.</p>
+            </div>
+          </article>
+
+          <article class="faction-node senegal">
+            <button class="faction-hitbox" type="button" aria-label="Senegal's Finest">
+              <span>Senegal’s Finest</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Senegal’s Finest</h2>
+              <p>Wanted for piracy, high treason, and an unreasonable number of tavern incidents.</p>
+              <p class="recruitment">Good company. Better contracts.</p>
+            </div>
+          </article>
+
+          <article class="faction-node blackguard">
+            <button class="faction-hitbox" type="button" aria-label="Blackguard">
+              <span>Blackguard</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Blackguard</h2>
+              <p>Peace is an illusion. We are the shield.</p>
+              <p class="recruitment">Strength. Discipline. Endurance.</p>
+            </div>
+          </article>
+
+          <article class="faction-node swift-mezzo">
+            <button class="faction-hitbox" type="button" aria-label="Swift and Mezzo">
+              <span>Swift &amp; Mezzo</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Swift &amp; Mezzo</h2>
+              <p>Quality locks. Diabolical traps. Keys for every lock.</p>
+              <p class="recruitment">Misuse remains entirely the customer’s responsibility.</p>
+            </div>
+          </article>
+
+          <article class="faction-node tideclaws">
+            <button class="faction-hitbox" type="button" aria-label="Tideclaws">
+              <span>Tideclaws</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>The Tideclaws</h2>
+              <p>Bring a curiosity, a memory, or a secret.</p>
+              <p class="recruitment">Go ask Alice.</p>
+            </div>
+          </article>
+
+          <article class="faction-node hard-hand">
+            <button class="faction-hitbox" type="button" aria-label="Hard Hand Junket">
+              <span>Hard Hand Junket</span>
+            </button>
+            <div class="faction-popout" contenteditable="true" spellcheck="true">
+              <h2>Hard Hand Junket</h2>
+              <p>Broken bones heal. Cowards do not.</p>
+              <p class="recruitment">The next match begins when someone stops asking permission.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <nav class="page-actions" aria-label="Organizations navigation">
+        <a class="archive-button" href="../index.html">
+          <span class="compass-icon" aria-hidden="true"></span>
+          <span>Return to Archive</span>
+        </a>
+      </nav>
+    </main>
+
+    <div class="archive-footer-art" aria-hidden="true">
+      <img src="../assets/Brass/brass_footer.png" alt="" />
+    </div>
+  </div>
 </body>
 </html>
