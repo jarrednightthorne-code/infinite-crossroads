@@ -130,23 +130,20 @@ h1 {
   height: auto;
 }
 
-/* DEBUG DRAWER HITBOXES */
+/* INVISIBLE DRAWER HITBOXES */
 .drawer-hitbox {
   position: absolute;
   z-index: 5;
-  display: grid;
-  place-items: center;
   padding: 0;
-  border: 3px solid rgba(255,48,48,.96);
-  background: rgba(255,0,0,.14);
-  color: #fff;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  font: 700 clamp(9px, 1vw, 13px)/1.2 "Courier New", monospace;
+  color: transparent;
+  font-size: 0;
 }
 
 .drawer-hitbox > span:first-child {
-  padding: 3px 6px;
-  background: rgba(0,0,0,.74);
+  display: none;
 }
 
 .coming-soon {
