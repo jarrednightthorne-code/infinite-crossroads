@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Purchase The Infinite Crossroads: A TTRPG digital edition." />
+  <title>The Infinite Crossroads: A TTRPG — System Ledger</title>
+  <link rel="icon" href="../assets/Icons/crossroads_compass.png" />
+
+  <style>
+    :root {
+      --ink: #070b10;
+      --ink-soft: #0d141c;
+      --navy: #111c28;
+      --parchment: #d6c39a;
+      --parchment-deep: #a98958;
+      --brass: #c6a15b;
+      --brass-bright: #e0c47d;
+      --brass-dark: #6b4d25;
+      --ivory: #eee7d5;
+      --muted: #b6aa8c;
+      --red: #7e2c2c;
+      --shadow: rgba(0, 0, 0, 0.72);
+      --max-width: 1380px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ivory);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(42, 64, 82, 0.25), transparent 34rem),
+        linear-gradient(rgba(3, 6, 10, 0.94), rgba(3, 6, 10, 0.98)),
+        url("../assets/Ledger/InfiniteCrossroadsHeader.png") center top / cover fixed no-repeat;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 18px auto 34px;
+      background:
+        linear-gradient(rgba(8, 13, 19, 0.96), rgba(8, 13, 19, 0.98)),
+        repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 3px,
+          rgba(255,255,255,0.012) 4px
+        );
+      border: 1px solid rgba(198, 161, 91, 0.7);
+      box-shadow:
+        0 0 0 3px rgba(10, 15, 20, 0.95),
+        0 0 0 4px rgba(198, 161, 91, 0.26),
+        0 26px 60px var(--shadow);
+      overflow: hidden;
+    }
+
+    .archive-header-art,
+    .archive-footer-art {
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+      background: #05080c;
+    }
+
+    .archive-header-art img,
+    .archive-footer-art img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-banner {
+      position: relative;
+      min-height: 340px;
+      display: grid;
+      place-items: end center;
+      padding: 34px;
+      text-align: center;
+      background:
+        linear-gradient(to bottom, rgba(2,5,8,0.15), rgba(2,5,8,0.38) 50%, rgba(2,5,8,0.95)),
+        url("../assets/Ledger/InfiniteCrossroadsHeader.png") center / cover no-repeat;
+      border-top: 1px solid rgba(198,161,91,.35);
+      border-bottom: 1px solid rgba(198,161,91,.52);
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(224,196,125,.34);
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      text-shadow: 0 3px 14px #000;
+    }
+
+    .system-line,
+    .kicker {
+      color: var(--brass-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.76rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      color: var(--brass-bright);
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    main {
+      padding: clamp(22px, 4vw, 54px);
+    }
+
+    .purchase-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.78fr) minmax(320px, 1.22fr);
+      gap: clamp(28px, 5vw, 68px);
+      align-items: center;
+    }
+
+    .cover-wrap {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 16px;
+      background: linear-gradient(145deg, rgba(224,196,125,.12), rgba(0,0,0,.2));
+      border: 1px solid rgba(198,161,91,.58);
+      box-shadow: 0 24px 50px rgba(0,0,0,.65);
+    }
+
+    .cover-wrap::before,
+    .cover-wrap::after {
+      content: "";
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      border-color: var(--brass-bright);
+      opacity: .72;
+    }
+
+    .cover-wrap::before {
+      top: 6px;
+      left: 6px;
+      border-top: 1px solid;
+      border-left: 1px solid;
+    }
+
+    .cover-wrap::after {
+      right: 6px;
+      bottom: 6px;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    .cover-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(0,0,0,.9);
+    }
+
+    .purchase-panel {
+      padding: clamp(24px, 4vw, 42px);
+      background:
+        linear-gradient(145deg, rgba(20, 31, 42, 0.96), rgba(8, 13, 18, 0.98));
+      border: 1px solid rgba(198,161,91,.64);
+      box-shadow: inset 0 0 28px rgba(0,0,0,.55);
+    }
+
+    .purchase-panel h2 {
+      margin-bottom: 8px;
+      color: var(--ivory);
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+    }
+
+    .edition-line {
+      color: var(--brass-bright);
+      font-size: 1.12rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .price {
+      margin: 18px 0;
+      color: var(--ivory);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1;
+    }
+
+    .price small {
+      color: var(--muted);
+      font-size: .9rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: #ddd4bf;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid var(--brass);
+      background: linear-gradient(#3e2f1b, #1c150d);
+      color: var(--ivory);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: inset 0 0 10px rgba(224,196,125,.12);
+      transition: transform .16s ease, border-color .16s ease, color .16s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--brass-bright);
+      color: #fff8df;
+      outline: none;
+    }
+
+    .btn.secondary {
+      background: rgba(9, 15, 21, .92);
+    }
+
+    .btn.placeholder {
+      cursor: not-allowed;
+      opacity: .72;
+      background:
+        linear-gradient(rgba(65,42,28,.9), rgba(28,18,13,.96));
+      border-color: #8c6f43;
+    }
+
+    .btn.placeholder:hover,
+    .btn.placeholder:focus-visible {
+      transform: none;
+    }
+
+    .purchase-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .divider {
+      height: 1px;
+      margin: clamp(34px, 6vw, 66px) 0;
+      background: linear-gradient(90deg, transparent, var(--brass), transparent);
+      box-shadow: 0 0 8px rgba(198,161,91,.32);
+    }
+
+    .section-title {
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      margin-bottom: 7px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+    }
+
+    .section-title p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .contents-grid,
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .archive-card {
+      min-height: 100%;
+      padding: 22px;
+      background: linear-gradient(145deg, rgba(22,31,40,.94), rgba(8,13,18,.98));
+      border: 1px solid rgba(198,161,91,.42);
+      box-shadow: inset 0 0 20px rgba(0,0,0,.42);
+    }
+
+    .archive-card h3 {
+      margin-bottom: 8px;
+      color: var(--brass-bright);
+      font-size: 1.14rem;
+    }
+
+    .archive-card p {
+      margin: 0;
+      color: #cec4ae;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .spec-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .spec-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(198,161,91,.18);
+    }
+
+    .spec-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .spec-list span:first-child {
+      color: var(--muted);
+    }
+
+    .spec-list strong {
+      color: var(--ivory);
+      text-align: right;
+      font-weight: 500;
+    }
+
+    .print-notice {
+      padding: clamp(26px, 4vw, 44px);
+      text-align: center;
+      background:
+        linear-gradient(rgba(80,58,32,.13), rgba(80,58,32,.05)),
+        rgba(7,12,17,.96);
+      border: 1px solid rgba(198,161,91,.56);
+    }
+
+    .print-notice h2 {
+      margin-bottom: 8px;
+      color: var(--brass-bright);
+    }
+
+    .faq {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    details {
+      margin-bottom: 10px;
+      background: rgba(10,16,22,.95);
+      border: 1px solid rgba(198,161,91,.34);
+    }
+
+    summary {
+      padding: 16px 18px;
+      color: var(--brass-bright);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 18px 18px;
+      color: #cec4ae;
+    }
+
+    .final-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-top: 42px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(198,161,91,.28);
+    }
+
+    footer {
+      padding: 18px 24px 26px;
+      color: #9f9276;
+      text-align: center;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: #05080c;
+    }
+
+    @media (max-width: 900px) {
+      .purchase-grid,
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contents-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cover-wrap {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-shell {
+        width: min(calc(100% - 12px), var(--max-width));
+        margin-top: 6px;
+      }
+
+      .hero-banner {
+        min-height: 250px;
+        padding: 24px 16px;
+      }
+
+      main {
+        padding: 18px 14px 30px;
+      }
+
+      .contents-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row,
+      .final-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .spec-list li {
+        display: block;
+      }
+
+      .spec-list strong {
+        display: block;
+        margin-top: 4px;
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+    <div class="archive-header-art" aria-hidden="true">
+      <img src="../assets/Brass/brass_header.png" alt="" />
+    </div>
+
+    <header class="hero-banner">
+      <div class="hero-copy">
+        <div class="system-line">Schola Archive // Acquisition Ledger</div>
+        <h1>The Infinite Crossroads</h1>
+        <p class="hero-subtitle">A Tabletop Roleplaying Game</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="purchase-grid" aria-labelledby="product-title">
+        <div class="cover-wrap">
+          <img
+            src="../assets/Ledger/InfiniteCrossroadsCoverArt.png"
+            alt="Cover of The Infinite Crossroads: A TTRPG"
+          />
+        </div>
+
+        <article class="purchase-panel">
+          <div class="kicker">Acquire Core System Ledger</div>
+          <h2 id="product-title">The Infinite Crossroads: A TTRPG</h2>
+          <div class="edition-line">Digital Edition</div>
+
+          <div class="price">
+            $25 <small>USD</small>
+          </div>
+
+          <p class="lead">
+            A complete tabletop roleplaying game about legacy, consequence,
+            and living worlds shaped by player action.
+          </p>
+
+          <p>
+            This volume contains everything needed to create characters,
+            wield Majik, explore the Lands of Fate, and run campaigns whose
+            events become permanent history.
+          </p>
+
+          <div class="button-row">
+            <!-- Replace this placeholder with the live PayPal purchase button. -->
+            <span
+              class="btn placeholder"
+              role="button"
+              aria-disabled="true"
+              title="PayPal checkout will be added before launch"
+            >
+              Purchase — $25 USD
+            </span>
+
+            <a class="btn secondary" href="registry.html">Join the Registry</a>
+          </div>
+
+          <p class="purchase-note">
+            PayPal checkout and secure download delivery will be connected before launch.
+          </p>
+        </article>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="contents-title">
+        <div class="section-title">
+          <div class="kicker">Recovered Contents Index</div>
+          <h2 id="contents-title">Contained Within This Ledger</h2>
+          <p>
+            The complete system, setting framework, and campaign tools needed
+            to begin a Tale within the Lands of Fate.
+          </p>
+        </div>
+
+        <div class="contents-grid">
+          <article class="archive-card">
+            <h3>The Eternity Engine</h3>
+            <p>
+              The complete D20 and Attribute Die rules, including Fortune,
+              Omen, Attribute Inversion, conflict, consequence, and advancement.
+            </p>
+          </article>
+
+          <article class="archive-card">
+            <h3>Complete Character Creation</h3>
+            <p>
+              Create characters through Genus, Lineage, Heritage, Archetype,
+              Specialization, Traits, Deviations, and personal history.
+            </p>
+          </article>
+
+          <article class="archive-card">
+            <h3>Thirty Specialization Paths</h3>
+            <p>
+              Develop Warriors, Sages, and Tricksters through flexible paths
+              built around identity, choice, and playstyle.
+            </p>
+          </article>
+
+          <article class="archive-card">
+            <h3>The Twenty-Four Runes</h3>
+            <p>
+              Build Majik through Elements, Disciplines, and Focus Runes
+              instead of memorizing fixed spell lists.
+            </p>
+          </article>
+
+          <article class="archive-card">
+            <h3>Tools for Exploration</h3>
+            <p>
+              Equipment, organizations, travel, crafting, social conflict,
+              martial conflict, and the systems that support a living world.
+            </p>
+          </article>
+
+          <article class="archive-card">
+            <h3>Turning the Wheel</h3>
+            <p>
+              Campaign guidance, GM tools, world progression, and the methods
+              used to turn player actions into permanent history.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section aria-labelledby="details-title">
+        <div class="section-title">
+          <div class="kicker">Archive Delivery Record</div>
+          <h2 id="details-title">Digital Edition Details</h2>
+        </div>
+
+        <div class="details-grid">
+          <article class="archive-card">
+            <h3>File Specifications</h3>
+            <ul class="spec-list">
+              <li><span>Format</span><strong>Full-color PDF</strong></li>
+              <li><span>Approximate size</span><strong>150 MB</strong></li>
+              <li><span>Navigation</span><strong>Bookmarked</strong></li>
+              <li><span>Text</span><strong>Fully searchable</strong></li>
+              <li><span>Printing</span><strong>Not optimized for home printing</strong></li>
+            </ul>
+          </article>
+
+          <article class="archive-card">
+            <h3>Delivery</h3>
+            <ul class="spec-list">
+              <li><span>Access</span><strong>Immediate after purchase</strong></li>
+              <li><span>Email</span><strong>Download link included</strong></li>
+              <li><span>Account required</span><strong>No</strong></li>
+              <li><span>Future revisions</span><strong>Not included</strong></li>
+              <li><span>New editions</span><strong>Separate releases</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="print-notice" aria-labelledby="print-title">
+        <div class="kicker">Forthcoming Archive Edition</div>
+        <h2 id="print-title">Printed Ledger — In Preparation</h2>
+        <p>
+          A physical edition is planned. Join the Registry to be notified when
+          printed copies become available.
+        </p>
+        <div class="button-row" style="justify-content:center;">
+          <a class="btn secondary" href="registry.html">Join the Registry</a>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="section-title">
+          <div class="kicker">Acquisition Questions</div>
+          <h2 id="faq-title">Frequently Asked Questions</h2>
+        </div>
+
+        <details>
+          <summary>What format will I receive?</summary>
+          <p>A bookmarked, searchable, full-color PDF.</p>
+        </details>
+
+        <details>
+          <summary>How will I receive it?</summary>
+          <p>
+            A download will be provided immediately after payment, with an
+            additional download link sent by email.
+          </p>
+        </details>
+
+        <details>
+          <summary>Are future revisions included?</summary>
+          <p>
+            No. New versions or editions will be treated as separate releases.
+          </p>
+        </details>
+
+        <details>
+          <summary>When will the printed edition be available?</summary>
+          <p>Soon. Join the Registry for release announcements.</p>
+        </details>
+      </section>
+
+      <nav class="final-actions" aria-label="Ledger page navigation">
+        <a class="btn secondary" href="../index.html">Return to Archive</a>
+
+        <div class="button-row" style="margin-top:0;">
+          <a class="btn secondary" href="registry.html">Join the Registry</a>
+
+          <!-- Replace this placeholder with the live PayPal purchase button. -->
+          <span
+            class="btn placeholder"
+            role="button"
+            aria-disabled="true"
+            title="PayPal checkout will be added before launch"
+          >
+            Purchase — $25 USD
+          </span>
+        </div>
+      </nav>
+    </main>
+
+    <div class="archive-footer-art" aria-hidden="true">
+      <img src="../assets/Brass/brass_footer.png" alt="" />
+    </div>
+
+    <footer>
+      The Infinite Crossroads • Schola Archive Acquisition Ledger<br />
+      Rights reserved by Otherworldly Publishing.
+    </footer>
+  </div>
+</body>
+</html>
