@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the Infinite Crossroads Registry or contact Otherworldly Publishing." />
+  <title>Join the Registry — The Infinite Crossroads</title>
+  <link rel="icon" href="../assets/Icons/crossroads_compass.png" />
+  <style>
+    :root {
+      --ink:#070b10; --panel:#101923; --brass:#c6a15b; --brass-bright:#e0c47d;
+      --ivory:#eee7d5; --muted:#b6aa8c; --field:#091018; --max-width:1380px;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; color:var(--ivory);
+      background:radial-gradient(circle at 50% 0%,rgba(42,64,82,.25),transparent 34rem),#05080c;
+      font-family:Georgia,"Times New Roman",serif; line-height:1.55;
+    }
+    a { color:inherit; }
+    .site-shell {
+      width:min(calc(100% - 28px),var(--max-width)); margin:18px auto 34px;
+      background:linear-gradient(rgba(8,13,19,.97),rgba(8,13,19,.99));
+      border:1px solid rgba(198,161,91,.7);
+      box-shadow:0 0 0 3px rgba(10,15,20,.95),0 0 0 4px rgba(198,161,91,.26),0 26px 60px rgba(0,0,0,.72);
+      overflow:hidden;
+    }
+    .archive-header-art,.archive-footer-art { line-height:0; background:#05080c; }
+    .archive-header-art img,.archive-footer-art img { display:block; width:100%; height:auto; }
+    .page-header {
+      position:relative; padding:clamp(52px,8vw,92px) 24px; text-align:center;
+      background:radial-gradient(circle at center,rgba(95,76,39,.15),transparent 50%),linear-gradient(180deg,rgba(14,23,31,.96),rgba(7,12,17,.98));
+      border-top:1px solid rgba(198,161,91,.35); border-bottom:1px solid rgba(198,161,91,.52);
+    }
+    .page-header::after { content:""; position:absolute; inset:12px; border:1px solid rgba(224,196,125,.3); pointer-events:none; }
+    .system-line,.kicker { color:var(--brass-bright); text-transform:uppercase; letter-spacing:.22em; font-size:.76rem; }
+    h1,h2 { margin-top:0; font-weight:500; }
+    h1 { margin:8px 0 10px; font-size:clamp(2.4rem,6vw,5rem); line-height:1; text-transform:uppercase; letter-spacing:.04em; }
+    .subtitle { max-width:760px; margin:0 auto; color:var(--muted); font-size:1.05rem; }
+    main { padding:clamp(22px,4vw,54px); }
+    .intro { max-width:900px; margin:0 auto 34px; text-align:center; }
+    .intro h2 { margin-bottom:8px; font-size:clamp(1.8rem,3vw,2.7rem); }
+    .intro p { margin:0; color:var(--muted); }
+    .forms-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,4vw,42px); align-items:start; }
+    .form-panel {
+      position:relative; padding:clamp(24px,4vw,38px);
+      background:linear-gradient(145deg,rgba(22,31,40,.97),rgba(8,13,18,.99));
+      border:1px solid rgba(198,161,91,.54);
+      box-shadow:inset 0 0 24px rgba(0,0,0,.48),0 18px 34px rgba(0,0,0,.24);
+    }
+    .form-panel::before,.form-panel::after { content:""; position:absolute; width:34px; height:34px; border-color:var(--brass-bright); opacity:.5; }
+    .form-panel::before { top:8px; left:8px; border-top:1px solid; border-left:1px solid; }
+    .form-panel::after { right:8px; bottom:8px; border-right:1px solid; border-bottom:1px solid; }
+    .form-panel h2 { margin:6px 0 8px; font-size:clamp(1.7rem,3vw,2.35rem); }
+    .form-intro { margin:0 0 24px; color:var(--muted); }
+    .form-group { margin-bottom:18px; }
+    label,legend { display:block; margin-bottom:7px; color:var(--brass-bright); font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    input,select,textarea {
+      width:100%; padding:12px 13px; color:var(--ivory); background:var(--field);
+      border:1px solid rgba(198,161,91,.5); border-radius:0; font:inherit;
+      box-shadow:inset 0 0 10px rgba(0,0,0,.38);
+    }
+    textarea { min-height:170px; resize:vertical; }
+    input::placeholder,textarea::placeholder { color:#7f7665; }
+    input:focus,select:focus,textarea:focus { outline:1px solid var(--brass-bright); border-color:var(--brass-bright); }
+    fieldset { margin:0 0 18px; padding:0; border:0; }
+    .interest-list { display:grid; grid-template-columns:1fr 1fr; gap:9px 14px; }
+    .check-row { display:flex; align-items:flex-start; gap:10px; }
+    .check-row input { width:auto; margin-top:5px; accent-color:var(--brass); }
+    .check-row label { margin:0; color:#cfc5b0; font-size:.9rem; font-weight:400; letter-spacing:0; line-height:1.45; text-transform:none; cursor:pointer; }
+    .privacy-note { margin:18px 0; padding:13px 14px; color:var(--muted); background:rgba(5,9,13,.62); border-left:3px solid var(--brass); font-size:.86rem; }
+    .btn {
+      min-height:48px; display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 20px; border:1px solid var(--brass); background:linear-gradient(#3e2f1b,#1c150d);
+      color:var(--ivory); font-family:inherit; text-decoration:none; text-transform:uppercase;
+      letter-spacing:.1em; font-weight:700; cursor:pointer;
+    }
+    .btn:hover,.btn:focus-visible { border-color:var(--brass-bright); color:#fff8df; outline:none; transform:translateY(-2px); }
+    button.btn { width:100%; }
+    .bottom-nav { display:flex; justify-content:flex-start; margin-top:42px; padding-top:26px; border-top:1px solid rgba(198,161,91,.28); }
+    .honeypot { position:absolute!important; left:-10000px!important; width:1px!important; height:1px!important; overflow:hidden!important; }
+    footer { padding:18px 24px 26px; color:#9f9276; text-align:center; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; background:#05080c; }
+    @media (max-width:900px) { .forms-grid { grid-template-columns:1fr; } }
+    @media (max-width:620px) {
+      .site-shell { width:min(calc(100% - 12px),var(--max-width)); margin-top:6px; }
+      main { padding:18px 14px 30px; }
+      .interest-list { grid-template-columns:1fr; }
+      .btn { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <div class="archive-header-art" aria-hidden="true"><img src="../assets/Brass/brass_header.png" alt="" /></div>
+
+    <header class="page-header">
+      <div class="system-line">Schola Archive // Registry and Correspondence</div>
+      <h1>Join the Registry</h1>
+      <p class="subtitle">Add your name to the Schola records for development news, release announcements, recovered lore, and future dispatches from the Lands of Fate.</p>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="kicker">Formal Archive Enrollment</div>
+        <h2>Choose Your Correspondence</h2>
+        <p>Registry enrollment and direct correspondence are maintained as separate archive records. Use the appropriate form below.</p>
+      </section>
+
+      <div class="forms-grid">
+        <section class="form-panel" aria-labelledby="registry-title">
+          <div class="kicker">Schola Registry</div>
+          <h2 id="registry-title">Enter Your Name</h2>
+          <p class="form-intro">Receive project updates, release announcements, podcast notices, playtest calls, and occasional recovered fragments from the archive.</p>
+
+          <form action="https://formspree.io/f/mbdnllak" method="POST">
+            <div class="form-group">
+              <label for="registry-name">Name</label>
+              <input type="text" id="registry-name" name="name" autocomplete="name" placeholder="How should the archive address you?" required />
+            </div>
+
+            <div class="form-group">
+              <label for="registry-email">Email Address</label>
+              <input type="email" id="registry-email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+
+            <fieldset>
+              <legend>Optional Interests</legend>
+              <div class="interest-list">
+                <div class="check-row"><input type="checkbox" id="interest-releases" name="interests" value="releases" /><label for="interest-releases">Book and PDF releases</label></div>
+                <div class="check-row"><input type="checkbox" id="interest-podcasts" name="interests" value="podcasts" /><label for="interest-podcasts">Podcasts and broadcasts</label></div>
+                <div class="check-row"><input type="checkbox" id="interest-playtests" name="interests" value="playtests" /><label for="interest-playtests">Playtests and community events</label></div>
+                <div class="check-row"><input type="checkbox" id="interest-lore" name="interests" value="lore" /><label for="interest-lore">Lore and development notes</label></div>
+              </div>
+            </fieldset>
+
+            <div class="check-row">
+              <input type="checkbox" id="registry-consent" name="consent" value="yes" required />
+              <label for="registry-consent">I consent to receive email from Otherworldly Publishing about The Infinite Crossroads. I understand that I may unsubscribe at any time.</label>
+            </div>
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="registry-company">Company</label>
+              <input type="text" id="registry-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <p class="privacy-note">Your information will be used only for the correspondence selected above. It will not be sold or shared for unrelated marketing.</p>
+            <button class="btn" type="submit">Join the Registry</button>
+          </form>
+        </section>
+
+        <section class="form-panel" aria-labelledby="contact-title">
+          <div class="kicker">Direct Correspondence</div>
+          <h2 id="contact-title">Contact the Developers</h2>
+          <p class="form-intro">Questions, press inquiries, playtest reports, technical problems, and messages for the development team may be submitted here.</p>
+
+          <form action="https://formspree.io/f/mzdnzzal" method="POST">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject" required>
+                <option value="" selected disabled>Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Website or Technical Support</option>
+                <option value="playtest">Playtest Feedback</option>
+                <option value="press">Press or Media</option>
+                <option value="business">Business or Publishing</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Enter your correspondence here." required></textarea>
+            </div>
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="contact-website">Website</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <p class="privacy-note">Your email address will be used only to respond to this message. Submitting this form does not add you to the Registry.</p>
+            <button class="btn" type="submit">Send Correspondence</button>
+          </form>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Registry page navigation">
+        <a class="btn" href="../index.html">Return to Archive</a>
+      </nav>
+    </main>
+
+    <div class="archive-footer-art" aria-hidden="true"><img src="../assets/Brass/brass_footer.png" alt="" /></div>
+    <footer>The Infinite Crossroads • Schola Registry and Correspondence<br />Rights reserved by Otherworldly Publishing.</footer>
+  </div>
+</body>
+</html>
