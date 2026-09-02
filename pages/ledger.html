@@ -241,6 +241,22 @@
       margin-top: 28px;
     }
 
+    /* PayPal Hosted Buttons render an iframe after page layout.
+       Give the empty host element a real flex width up front so the
+       iframe cannot collapse the flex item and spill across the page. */
+    .paypal-hosted-button {
+      flex: 1 1 320px;
+      width: 100%;
+      max-width: 420px;
+      min-width: 260px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .paypal-hosted-button iframe {
+      max-width: 100% !important;
+    }
+
     .btn {
       min-height: 48px;
       display: inline-flex;
@@ -473,6 +489,11 @@
         width: 100%;
       }
 
+      .paypal-hosted-button {
+        min-width: 0;
+        max-width: none;
+      }
+
       .spec-list li {
         display: block;
       }
@@ -514,7 +535,7 @@
     </header>
 
     <main>
-      <section class="purchase-grid" aria-labelledby="product-title">
+      <section id="purchase" class="purchase-grid" aria-labelledby="product-title">
         <div class="cover-wrap">
           <img
             src="../assets/InfiniteCrossroadsCoverArt.png"
@@ -543,7 +564,7 @@
           </p>
 
           <div class="button-row">
-            <div id="paypal-container-YBSBQAVA4HVJ2-main"></div>
+            <div class="paypal-hosted-button" id="paypal-container-YBSBQAVA4HVJ2-main"></div>
             <script>
               paypal.HostedButtons({
                 hostedButtonId: "YBSBQAVA4HVJ2",
@@ -708,12 +729,7 @@
 
         <div class="button-row" style="margin-top:0;">
           <a class="btn secondary" href="registry.html">Join the Registry</a>
-          <div id="paypal-container-YBSBQAVA4HVJ2-footer"></div>
-          <script>
-            paypal.HostedButtons({
-              hostedButtonId: "YBSBQAVA4HVJ2",
-            }).render("#paypal-container-YBSBQAVA4HVJ2-footer");
-          </script>
+          <a class="btn" href="#purchase">Acquire Digital Edition — $25</a>
         </div>
       </nav>
     </main>
