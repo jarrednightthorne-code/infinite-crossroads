@@ -497,6 +497,9 @@
 </head>
 
 <body>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=BAArmWmQDpqvCPugn8snC7RYgY9u-mWz9p7pLAqfp7kp-ZrLcC1AnhBpDpAQ1pMn_YoBhYhMQc4xpuvhL0&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
   <div class="site-shell">
     <div class="archive-header-art" aria-hidden="true">
       <img src="../assets/Brass/brass_header.png" alt="" />
@@ -540,15 +543,12 @@
           </p>
 
           <div class="button-row">
-            <!-- Replace this placeholder with the live PayPal purchase button. -->
-            <span
-              class="btn placeholder"
-              role="button"
-              aria-disabled="true"
-              title="PayPal checkout will be added before launch"
-            >
-              Purchase — $25 USD
-            </span>
+            <div id="paypal-container-YBSBQAVA4HVJ2-main"></div>
+            <script>
+              paypal.HostedButtons({
+                hostedButtonId: "YBSBQAVA4HVJ2",
+              }).render("#paypal-container-YBSBQAVA4HVJ2-main");
+            </script>
 
             <a class="btn secondary" href="registry.html">Join the Registry</a>
           </div>
@@ -708,16 +708,12 @@
 
         <div class="button-row" style="margin-top:0;">
           <a class="btn secondary" href="registry.html">Join the Registry</a>
-
-          <!-- Replace this placeholder with the live PayPal purchase button. -->
-          <span
-            class="btn placeholder"
-            role="button"
-            aria-disabled="true"
-            title="PayPal checkout will be added before launch"
-          >
-            Purchase — $25 USD
-          </span>
+          <div id="paypal-container-YBSBQAVA4HVJ2-footer"></div>
+          <script>
+            paypal.HostedButtons({
+              hostedButtonId: "YBSBQAVA4HVJ2",
+            }).render("#paypal-container-YBSBQAVA4HVJ2-footer");
+          </script>
         </div>
       </nav>
     </main>
